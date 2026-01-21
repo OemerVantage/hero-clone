@@ -35,6 +35,34 @@ const values = [
   }
 ];
 
+const milestones = [
+  {
+    year: "2011",
+    title: "Gründung in Winterthur",
+    description: "Fisnik Dauti gründet BeFi als kleines Reinigungsunternehmen mit einer Vision für exzellenten Service."
+  },
+  {
+    year: "2015",
+    title: "Erste Grosskunden",
+    description: "Erweiterung des Kundenportfolios um gewerbliche und industrielle Auftraggeber."
+  },
+  {
+    year: "2018",
+    title: "Qualitätszertifizierung",
+    description: "ISO 9001 Zertifizierung und Einführung standardisierter Qualitätsprozesse."
+  },
+  {
+    year: "2022",
+    title: "Wachstum & Expansion",
+    description: "50 Mitarbeiter stark, Ausbau der Dienstleistungen auf die ganze Deutschschweiz."
+  },
+  {
+    year: "2025",
+    title: "Digitale Transformation",
+    description: "Einführung digitaler Tools für effizientere Abläufe und bessere Kundenbetreuung."
+  }
+];
+
 const teamMembers = [
   {
     name: "Fisnik Dauti",
@@ -153,6 +181,82 @@ const UeberUns = () => {
               </div>
             </div>
           </FadeIn>
+        </div>
+      </section>
+
+      {/* Timeline Section */}
+      <section className="py-12 md:py-16 lg:py-24 bg-background">
+        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+          <FadeIn direction="up">
+            {/* Two-Column Header */}
+            <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 mb-8 md:mb-12">
+              <div className="lg:w-2/5">
+                <div className="inline-flex items-center px-4 md:px-6 py-2 bg-secondary border border-border rounded-full text-base md:text-lg font-light mb-4 md:mb-6">
+                  Unsere Meilensteine
+                </div>
+                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-tight leading-tight text-foreground">
+                  DIE ENTWICKLUNG VON BEFI
+                </h2>
+              </div>
+              <div className="lg:w-3/5 flex items-end">
+                <p className="text-base md:text-lg font-light text-foreground leading-relaxed">
+                  Von der Gründung bis heute – entdecken Sie die wichtigsten 
+                  Meilensteine unserer Unternehmensgeschichte.
+                </p>
+              </div>
+            </div>
+          </FadeIn>
+
+          {/* Timeline */}
+          <div className="relative">
+            {/* Vertical Line - Hidden on mobile, shown on lg */}
+            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
+            
+            {/* Mobile Line */}
+            <div className="lg:hidden absolute left-4 top-0 bottom-0 w-0.5 bg-border" />
+
+            <StaggerChildren
+              className="flex flex-col gap-6 md:gap-8"
+              staggerDelay={0.15}
+            >
+              {milestones.map((milestone, index) => {
+                const isLeft = index % 2 === 0;
+                
+                return (
+                  <div 
+                    key={milestone.year}
+                    className={`relative flex items-start gap-4 md:gap-6 lg:gap-8 ${
+                      isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'
+                    }`}
+                  >
+                    {/* Content Card */}
+                    <div className={`flex-1 ml-10 lg:ml-0 bg-secondary rounded-[20px] md:rounded-[24px] p-5 md:p-6 lg:p-8 ${
+                      isLeft ? 'lg:text-right' : 'lg:text-left'
+                    }`}>
+                      <span className="text-2xl md:text-3xl font-bold text-foreground">
+                        {milestone.year}
+                      </span>
+                      <h3 className="text-base md:text-lg font-semibold text-foreground mt-2 mb-2">
+                        {milestone.title}
+                      </h3>
+                      <p className="text-sm text-foreground/70 font-light leading-relaxed">
+                        {milestone.description}
+                      </p>
+                    </div>
+
+                    {/* Timeline Dot - Mobile */}
+                    <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-foreground rounded-full -translate-x-1/2 z-10" />
+
+                    {/* Timeline Dot - Desktop */}
+                    <div className="hidden lg:flex absolute left-1/2 top-6 w-4 h-4 bg-foreground rounded-full -translate-x-1/2 z-10" />
+
+                    {/* Spacer for opposite side on desktop */}
+                    <div className="hidden lg:block flex-1" />
+                  </div>
+                );
+              })}
+            </StaggerChildren>
+          </div>
         </div>
       </section>
 
