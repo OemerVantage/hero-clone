@@ -10,8 +10,8 @@ const Header = () => {
     { label: "Home", path: "/" },
     { label: "Dienstleistungen", path: "/dienstleistungen" },
     { label: "Über uns", path: "/ueber-uns" },
-    { label: "Referenzen", path: "/#testimonials" },
-    { label: "Kontakt", path: "/#contact" }
+    { label: "Referenzen", path: "/referenzen" },
+    { label: "Kontakt", path: "/kontakt" }
   ];
 
   return (
