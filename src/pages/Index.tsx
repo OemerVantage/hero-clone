@@ -7,7 +7,7 @@ import WhoWeAreSection from "@/components/WhoWeAreSection";
 import TestimonialsSection from "@/components/TestimonialsSection";
 import FAQSection from "@/components/FAQSection";
 import ContactSection from "@/components/ContactSection";
-
+import Footer from "@/components/Footer";
 const Index = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -20,6 +20,7 @@ const Index = () => {
       <TestimonialsSection />
       <FAQSection />
       <ContactSection />
+      <Footer />
     </div>
   );
 };
