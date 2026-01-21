@@ -15,16 +15,19 @@ const heroStats = [
 const serviceAreas = [
   {
     title: "Reinigung & Unterhalt",
+    slug: "reinigung",
     description: "Professionelle Reinigungsarbeiten für Wohnungen, Büros, Industrie- und Gewerberäume. Wir sorgen für makellose Sauberkeit mit modernsten Techniken und umweltfreundlichen Mitteln.",
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
   },
   {
     title: "Hauswartung & Technischer Service",
+    slug: "hauswartung",
     description: "Laufende Betreuung und Pflege von Immobilien – technisch und organisatorisch. Wir sorgen für Funktionalität, Sicherheit und Werterhalt Ihrer Liegenschaft.",
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"
   },
   {
     title: "Garten & Aussenanlagen",
+    slug: "garten",
     description: "Gartenpflege und Grünflächenbetreuung für gepflegte und einladende Aussenbereiche. Das ganze Jahr über kümmern wir uns um Ihre Grünanlagen.",
     image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80"
   }
@@ -137,7 +140,7 @@ const Dienstleistungen = () => {
                     </p>
                     
                     <Link 
-                      to="/#contact" 
+                      to={`/dienstleistungen/${service.slug}`}
                       className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-6 md:px-8 py-2.5 md:py-3 rounded-full text-sm md:text-base font-medium transition-colors"
                     >
                       Mehr erfahren
