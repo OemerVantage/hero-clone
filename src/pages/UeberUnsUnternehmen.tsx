@@ -136,77 +136,64 @@ const UeberUnsUnternehmen = () => {
 
       {/* Timeline Section */}
       <section className="py-12 md:py-16 lg:py-24 bg-secondary">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+        <div className="max-w-[1000px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <FadeIn direction="up">
-            {/* Two-Column Header */}
-            <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 mb-8 md:mb-12">
-              <div className="lg:w-2/5">
-                <div className="inline-flex items-center px-4 md:px-6 py-2 bg-background border border-border rounded-full text-base md:text-lg font-light mb-4 md:mb-6">
-                  Unsere Meilensteine
-                </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-tight leading-tight text-foreground">
-                  DIE ENTWICKLUNG VON BEFI
-                </h2>
+            {/* Centered Header */}
+            <div className="text-center mb-12 md:mb-16">
+              <div className="inline-flex items-center px-4 md:px-6 py-2 bg-background border border-border rounded-full text-base md:text-lg font-light mb-4 md:mb-6">
+                Unsere Meilensteine
               </div>
-              <div className="lg:w-3/5 flex items-end">
-                <p className="text-base md:text-lg font-light text-foreground leading-relaxed">
-                  Von der Gründung bis heute – entdecken Sie die wichtigsten 
-                  Meilensteine unserer Unternehmensgeschichte.
-                </p>
-              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-tight leading-tight text-foreground mb-4">
+                DIE ENTWICKLUNG VON BEFI
+              </h2>
+              <p className="text-base md:text-lg font-light text-foreground/70 leading-relaxed max-w-2xl mx-auto">
+                Von der Gründung bis heute – entdecken Sie die wichtigsten 
+                Meilensteine unserer Unternehmensgeschichte.
+              </p>
             </div>
           </FadeIn>
 
-          {/* Timeline */}
-          <div className="relative">
-            {/* Vertical Line - Hidden on mobile, shown on lg */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
-            
-            {/* Mobile Line */}
-            <div className="lg:hidden absolute left-4 top-0 bottom-0 w-0.5 bg-border" />
-
-            <StaggerChildren
-              className="flex flex-col gap-6 md:gap-8"
-              staggerDelay={0.15}
-            >
-              {milestones.map((milestone, index) => {
-                const isLeft = index % 2 === 0;
-                
-                return (
-                  <div 
-                    key={milestone.year}
-                    className={`relative flex items-start gap-4 md:gap-6 lg:gap-8 ${
-                      isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                    }`}
-                  >
-                    {/* Content Card */}
-                    <div className={`flex-1 ml-10 lg:ml-0 bg-background rounded-[20px] md:rounded-[24px] p-5 md:p-6 lg:p-8 ${
-                      isLeft ? 'lg:text-right' : 'lg:text-left'
-                    }`}>
-                      <span className="text-2xl md:text-3xl font-bold text-foreground">
+          {/* Premium Timeline */}
+          <StaggerChildren
+            className="flex flex-col"
+            staggerDelay={0.12}
+          >
+            {milestones.map((milestone, index) => (
+              <div key={milestone.year}>
+                {/* Timeline Card */}
+                <div className="bg-background rounded-[20px] md:rounded-[24px] p-6 md:p-8 lg:p-10 shadow-lg border border-border/50 hover:shadow-xl hover:border-primary/20 transition-all duration-300 group">
+                  <div className="flex flex-col sm:flex-row gap-5 md:gap-8">
+                    {/* Year Badge */}
+                    <div className="flex-shrink-0">
+                      <div className="inline-flex items-center justify-center w-16 h-16 md:w-20 md:h-20 bg-foreground text-background rounded-2xl text-xl md:text-2xl font-bold group-hover:scale-105 transition-transform duration-300">
                         {milestone.year}
-                      </span>
-                      <h3 className="text-base md:text-lg font-semibold text-foreground mt-2 mb-2">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-sm text-foreground/70 font-light leading-relaxed">
+                      </div>
+                    </div>
+                    
+                    {/* Content */}
+                    <div className="flex-1">
+                      <div className="flex items-center gap-3 mb-3">
+                        <div className="w-8 h-0.5 bg-primary" />
+                        <h3 className="text-base md:text-lg font-semibold uppercase tracking-wide text-foreground">
+                          {milestone.title}
+                        </h3>
+                      </div>
+                      <p className="text-sm md:text-base text-foreground/70 leading-relaxed">
                         {milestone.description}
                       </p>
                     </div>
-
-                    {/* Timeline Dot - Mobile */}
-                    <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-foreground rounded-full -translate-x-1/2 z-10" />
-
-                    {/* Timeline Dot - Desktop */}
-                    <div className="hidden lg:flex absolute left-1/2 top-6 w-4 h-4 bg-foreground rounded-full -translate-x-1/2 z-10" />
-
-                    {/* Spacer for opposite side on desktop */}
-                    <div className="hidden lg:block flex-1" />
                   </div>
-                );
-              })}
-            </StaggerChildren>
-          </div>
+                </div>
+
+                {/* Connector Line */}
+                {index < milestones.length - 1 && (
+                  <div className="flex justify-center py-3 md:py-4">
+                    <div className="w-0.5 h-8 md:h-12 bg-gradient-to-b from-border via-primary/30 to-border rounded-full" />
+                  </div>
+                )}
+              </div>
+            ))}
+          </StaggerChildren>
         </div>
       </section>
 
