@@ -58,6 +58,12 @@ const Footer = () => {
                 Über uns
               </Link>
               <Link 
+                to="/karriere" 
+                className="text-background/70 hover:text-background transition-colors text-sm"
+              >
+                Karriere
+              </Link>
+              <Link 
                 to="/referenzen" 
                 className="text-background/70 hover:text-background transition-colors text-sm"
               >
