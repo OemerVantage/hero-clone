@@ -1,8 +1,13 @@
 import * as React from "react";
-import * as AccordionPrimitive from "@radix-ui/react-accordion";
 import { Plus } from "lucide-react";
 import { cn } from "@/lib/utils";
 import FadeIn from "@/components/motion/FadeIn";
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+} from "@/components/ui/accordion";
+import * as AccordionPrimitive from "@radix-ui/react-accordion";
 
 interface FAQ {
   question: string;
@@ -44,7 +49,7 @@ const faqs: FAQ[] = [
   }
 ];
 
-const CustomAccordionTrigger = React.forwardRef<
+const FAQAccordionTrigger = React.forwardRef<
   React.ElementRef<typeof AccordionPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof AccordionPrimitive.Trigger>
 >(({ className, children, ...props }, ref) => (
@@ -64,7 +69,7 @@ const CustomAccordionTrigger = React.forwardRef<
     </AccordionPrimitive.Trigger>
   </AccordionPrimitive.Header>
 ));
-CustomAccordionTrigger.displayName = "CustomAccordionTrigger";
+FAQAccordionTrigger.displayName = "FAQAccordionTrigger";
 
 const FAQSection = () => {
   return (
@@ -86,24 +91,22 @@ const FAQSection = () => {
         
         {/* Right Column - Accordion */}
         <div className="lg:w-2/3 w-full">
-          <AccordionPrimitive.Root type="single" collapsible className="w-full">
+          <Accordion type="single" collapsible className="w-full">
             {faqs.map((faq, index) => (
-              <AccordionPrimitive.Item 
+              <AccordionItem 
                 key={index} 
                 value={`item-${index}`} 
                 className="border-b border-border"
               >
-                <CustomAccordionTrigger>
+                <FAQAccordionTrigger>
                   {faq.question}
-                </CustomAccordionTrigger>
-                <AccordionPrimitive.Content className="overflow-hidden text-base font-light text-foreground leading-relaxed transition-all data-[state=closed]:animate-accordion-up data-[state=open]:animate-accordion-down">
-                  <div className="pb-6 pt-0">
-                    {faq.answer}
-                  </div>
-                </AccordionPrimitive.Content>
-              </AccordionPrimitive.Item>
+                </FAQAccordionTrigger>
+                <AccordionContent className="text-base font-light text-foreground leading-relaxed">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
             ))}
-          </AccordionPrimitive.Root>
+          </Accordion>
         </div>
         
       </div>
