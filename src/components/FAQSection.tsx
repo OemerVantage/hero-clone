@@ -73,42 +73,44 @@ FAQAccordionTrigger.displayName = "FAQAccordionTrigger";
 
 const FAQSection = () => {
   return (
-    <section className="bg-background py-16 md:py-24 px-6 md:px-12 lg:px-20 xl:px-[240px]">
-      <div className="flex flex-col lg:flex-row gap-12 lg:gap-16 items-start">
-        
-        {/* Left Column - Header */}
-        <FadeIn direction="right" className="lg:w-1/3">
-          <span className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light text-foreground mb-6">
-            Häufige Fragen
-          </span>
+    <section className="bg-background py-12 md:py-16 lg:py-24">
+      <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
+        <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-start">
           
-          <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-tight text-foreground leading-tight">
-            HÄUFIG GESTELLTE
-            <br />
-            FRAGEN
-          </h2>
-        </FadeIn>
-        
-        {/* Right Column - Accordion */}
-        <div className="lg:w-2/3 w-full">
-          <Accordion type="single" collapsible className="w-full">
-            {faqs.map((faq, index) => (
-              <AccordionItem 
-                key={index} 
-                value={`item-${index}`} 
-                className="border-b border-border"
-              >
-                <FAQAccordionTrigger>
-                  {faq.question}
-                </FAQAccordionTrigger>
-                <AccordionContent className="text-base font-light text-foreground leading-relaxed">
-                  {faq.answer}
-                </AccordionContent>
-              </AccordionItem>
-            ))}
-          </Accordion>
+          {/* Left Column - Header */}
+          <FadeIn direction="right" className="w-full lg:w-1/3">
+            <span className="inline-flex items-center px-4 md:px-6 py-2 bg-secondary border border-border rounded-full text-base md:text-lg font-light text-foreground mb-4 md:mb-6">
+              Häufige Fragen
+            </span>
+            
+            <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-tight text-foreground leading-tight">
+              HÄUFIG GESTELLTE
+              <br />
+              FRAGEN
+            </h2>
+          </FadeIn>
+          
+          {/* Right Column - Accordion */}
+          <div className="w-full lg:w-2/3">
+            <Accordion type="single" collapsible className="w-full">
+              {faqs.map((faq, index) => (
+                <AccordionItem 
+                  key={index} 
+                  value={`item-${index}`} 
+                  className="border-b border-border"
+                >
+                  <FAQAccordionTrigger>
+                    {faq.question}
+                  </FAQAccordionTrigger>
+                  <AccordionContent className="text-base font-light text-foreground leading-relaxed">
+                    {faq.answer}
+                  </AccordionContent>
+                </AccordionItem>
+              ))}
+            </Accordion>
+          </div>
+          
         </div>
-        
       </div>
     </section>
   );
