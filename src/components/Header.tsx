@@ -1,7 +1,14 @@
 import { ArrowUpRight } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Header = () => {
-  const navLinks = ["Home", "Dienstleistungen", "Über uns", "Referenzen", "Kontakt"];
+  const navLinks = [
+    { label: "Home", path: "/" },
+    { label: "Dienstleistungen", path: "/dienstleistungen" },
+    { label: "Über uns", path: "/#about" },
+    { label: "Referenzen", path: "/#testimonials" },
+    { label: "Kontakt", path: "/#contact" }
+  ];
 
   return (
     <header className="w-full py-5 px-6 md:px-12 flex items-center justify-between bg-background">
@@ -26,9 +33,9 @@ const Header = () => {
       {/* Navigation */}
       <nav className="hidden md:flex items-center gap-8">
         {navLinks.map((link) => (
-          <a key={link} href="#" className="nav-link">
-            {link}
-          </a>
+          <Link key={link.label} to={link.path} className="nav-link">
+            {link.label}
+          </Link>
         ))}
       </nav>
 
