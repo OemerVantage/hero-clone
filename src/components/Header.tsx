@@ -5,7 +5,7 @@ const Header = () => {
   const navLinks = [
     { label: "Home", path: "/" },
     { label: "Dienstleistungen", path: "/dienstleistungen" },
-    { label: "Über uns", path: "/#about" },
+    { label: "Über uns", path: "/ueber-uns" },
     { label: "Referenzen", path: "/#testimonials" },
     { label: "Kontakt", path: "/#contact" }
   ];
