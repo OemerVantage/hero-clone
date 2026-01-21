@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerChildren from "@/components/motion/StaggerChildren";
 import { Home, Building, Factory, Building2, ArrowUpRight } from "lucide-react";
@@ -226,6 +227,7 @@ const Dienstleistungen = () => {
 
       {/* Contact Section */}
       <ContactSection />
+      <Footer />
     </div>
   );
 };

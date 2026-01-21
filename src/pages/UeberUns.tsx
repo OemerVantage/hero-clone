@@ -1,5 +1,6 @@
 import Header from "@/components/Header";
 import ContactSection from "@/components/ContactSection";
+import Footer from "@/components/Footer";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerChildren from "@/components/motion/StaggerChildren";
 import { CheckCircle, Shield, Leaf, Users, Eye, Target, ArrowUpRight } from "lucide-react";
@@ -337,6 +338,7 @@ const UeberUns = () => {
 
       {/* Contact Section */}
       <ContactSection />
+      <Footer />
     </div>
   );
 };
