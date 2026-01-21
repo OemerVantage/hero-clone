@@ -7,13 +7,13 @@ const WhatWeOfferSection = () => {
       {/* Header */}
       <div className="mb-12">
         <span className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light text-foreground mb-6">
-          What We Offer
+          Unsere Leistungen
         </span>
         <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-tight text-foreground mb-4 leading-tight">
-          COMPREHENSIVE REAL ESTATE SOLUTIONS
+          UMFASSENDE FACILITY SERVICES
         </h2>
         <p className="text-lg font-light text-foreground leading-relaxed max-w-[727px]">
-          Our comprehensive services encompass luxury property sales, sustainable green building investments, and premium vacation rentals.
+          Unsere Dienstleistungen umfassen professionelle Reinigung, technische Hauswartung und Grünflächenpflege – alles aus einer Hand.
         </p>
       </div>
 
@@ -24,17 +24,18 @@ const WhatWeOfferSection = () => {
           {/* Icon */}
           <div className="w-12 h-12 mb-4">
             <svg viewBox="0 0 48 48" className="w-full h-full text-foreground" fill="none" stroke="currentColor" strokeWidth="1.5">
-              <path d="M8 44V20L24 6L40 20V44H8Z" />
-              <path d="M18 44V30H30V44" />
+              <path d="M24 8L24 40M16 16L24 8L32 16" />
+              <path d="M12 28C12 28 16 24 24 24C32 24 36 28 36 28" />
+              <circle cx="24" cy="36" r="4" />
             </svg>
           </div>
           
           <h3 className="text-2xl font-semibold text-foreground mb-4">
-            Luxury Residences
+            Reinigung & Unterhalt
           </h3>
           
           <p className="text-lg font-light text-foreground leading-relaxed max-w-[388px]">
-            Experience unparalleled elegance in our luxury residences, featuring exquisite design, premium amenities, and prime locations for the most discerning tastes.
+            Professionelle Reinigungsarbeiten für Wohnungen, Büros und Industrieräume. Von der Unterhaltsreinigung bis zur Spezialreinigung – wir sorgen für makellose Sauberkeit.
           </p>
         </div>
 
@@ -43,7 +44,7 @@ const WhatWeOfferSection = () => {
           <div className="relative h-[400px] lg:h-[500px] rounded-[32px] overflow-hidden">
             <img 
               src={luxuryResidenceImage} 
-              alt="Modern luxury residence with glass facade"
+              alt="Professionelle Reinigungsarbeiten"
               className="w-full h-full object-cover"
             />
             
@@ -68,7 +69,7 @@ const WhatWeOfferSection = () => {
               {/* Text Badge */}
               <div className="bg-white rounded-tl-[32px] px-6 py-5 min-w-[187px]">
                 <span className="text-5xl font-light text-foreground block">01</span>
-                <p className="text-lg font-semibold text-foreground">Luxury Residences</p>
+                <p className="text-lg font-semibold text-foreground">Reinigung & Unterhalt</p>
               </div>
             </div>
           </div>
@@ -86,7 +87,7 @@ const WhatWeOfferSection = () => {
               <div className="lg:-rotate-90 whitespace-nowrap flex items-center gap-4">
                 <span className="text-4xl lg:text-5xl font-light text-muted-foreground">02</span>
                 <span className="text-xl lg:text-2xl font-semibold text-muted-foreground uppercase tracking-wide">
-                  ECO GREEN BUILDINGS
+                  HAUSWARTUNG & TECHNIK
                 </span>
               </div>
             </div>
@@ -102,7 +103,7 @@ const WhatWeOfferSection = () => {
               <div className="lg:-rotate-90 whitespace-nowrap flex items-center gap-4">
                 <span className="text-4xl lg:text-5xl font-light text-muted-foreground/60">03</span>
                 <span className="text-xl lg:text-2xl font-semibold text-muted-foreground/60 uppercase tracking-wide">
-                  UNIQUE VACATION HOMES
+                  GARTEN & AUSSENANLAGEN
                 </span>
               </div>
             </div>

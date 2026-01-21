@@ -1,136 +1,125 @@
-import { MapPin, Bed, Bath, Maximize2 } from "lucide-react";
+import { MapPin, Users, Clock } from "lucide-react";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerChildren from "@/components/motion/StaggerChildren";
 
-interface Property {
+interface Service {
   id: number;
   image: string;
-  type: "Investment" | "Sell" | "Rent";
+  type: "Gewerbe" | "Industrie" | "Privat";
   location: string;
   name: string;
-  bedrooms?: number;
-  bathrooms?: number;
-  sqft: number;
-  price?: number;
+  teamSize?: number;
+  interval?: string;
+  sqm?: number;
 }
 
-const properties: Property[] = [
+const services: Service[] = [
   {
     id: 1,
-    image: "https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=600&h=450&fit=crop",
-    type: "Investment",
-    location: "Bel Air, LA",
-    name: "The One",
-    bedrooms: 6,
-    bathrooms: 4,
-    sqft: 2780,
-    price: 690000
+    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=450&fit=crop",
+    type: "Gewerbe",
+    location: "Winterthur, ZH",
+    name: "Büroreinigung",
+    teamSize: 3,
+    interval: "Täglich",
+    sqm: 500
   },
   {
     id: 2,
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop",
-    type: "Sell",
-    location: "Bel Air, LA",
-    name: "Billionaire Mansion",
-    bedrooms: 5,
-    sqft: 3800,
-    price: 500000
+    image: "https://images.unsplash.com/photo-1581092160562-40aa08e78837?w=600&h=450&fit=crop",
+    type: "Industrie",
+    location: "Zürich Region",
+    name: "Industriereinigung",
+    teamSize: 5,
+    interval: "Wöchentlich",
+    sqm: 2000
   },
   {
     id: 3,
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=450&fit=crop",
-    type: "Rent",
-    location: "Beverly Hills, CA",
-    name: "The Beverly House",
-    bedrooms: 3,
-    bathrooms: 2,
-    sqft: 1500,
-    price: 290000
+    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=600&h=450&fit=crop",
+    type: "Privat",
+    location: "Ganze Schweiz",
+    name: "Umzugsreinigung",
+    teamSize: 2,
+    sqm: 120
   },
   {
     id: 4,
-    image: "https://images.unsplash.com/photo-1600566753190-17f0baa2a6c3?w=600&h=450&fit=crop",
-    type: "Rent",
-    location: "Beverly Hills, CA",
-    name: "Palazzo di Amore",
-    bedrooms: 4,
-    bathrooms: 2,
-    sqft: 2100,
-    price: 490000
+    image: "https://images.unsplash.com/photo-1527515637462-cff94eecc1ac?w=600&h=450&fit=crop",
+    type: "Gewerbe",
+    location: "Winterthur & Umgebung",
+    name: "Fassadenreinigung",
+    teamSize: 4,
+    interval: "Monatlich",
+    sqm: 800
   },
   {
     id: 5,
-    image: "https://images.unsplash.com/photo-1600573472550-8090b5e0745e?w=600&h=450&fit=crop",
-    type: "Investment",
-    location: "Holmby Hills, LA",
-    name: "The Manor",
-    bedrooms: 7,
-    bathrooms: 5,
-    sqft: 3100,
-    price: 482000
+    image: "https://images.unsplash.com/photo-1558618047-f4b511e4e65c?w=600&h=450&fit=crop",
+    type: "Gewerbe",
+    location: "Zürich & Winterthur",
+    name: "Hauswartung",
+    teamSize: 2,
+    interval: "Laufend"
   },
   {
     id: 6,
-    image: "https://images.unsplash.com/photo-1600047509807-ba8f99d2cdde?w=600&h=450&fit=crop",
-    type: "Sell",
-    location: "Upper East Side, NY",
-    name: "The Penthouse at Central Park Tower",
-    bathrooms: 2,
-    sqft: 2200
+    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=600&h=450&fit=crop",
+    type: "Privat",
+    location: "Winterthur Region",
+    name: "Gartenpflege",
+    teamSize: 3,
+    interval: "Saisonal"
   }
 ];
 
-const PropertyCard = ({ property }: { property: Property }) => (
+const ServiceCard = ({ service }: { service: Service }) => (
   <div className="group cursor-pointer">
     {/* Image Container */}
     <div className="relative rounded-[32px] overflow-hidden mb-4 aspect-[4/3]">
       <img 
-        src={property.image} 
-        alt={property.name}
+        src={service.image} 
+        alt={service.name}
         className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
       />
       
       {/* Type Badge */}
       <span className="absolute top-4 right-4 bg-white px-4 py-1.5 rounded-full text-sm font-medium text-foreground border border-border">
-        For {property.type}
+        {service.type}
       </span>
     </div>
     
     {/* Location */}
     <div className="flex items-center gap-1.5 text-foreground mb-2">
       <MapPin className="w-4 h-4" />
-      <span className="text-sm font-light">{property.location}</span>
+      <span className="text-sm font-light">{service.location}</span>
     </div>
     
     {/* Name */}
     <h3 className="text-xl font-semibold text-foreground mb-3 leading-tight">
-      {property.name}
+      {service.name}
     </h3>
     
     {/* Features */}
     <div className="flex items-center gap-4 text-sm text-muted-foreground mb-3">
-      {property.bedrooms && (
+      {service.teamSize && (
         <span className="flex items-center gap-1.5">
-          <Bed className="w-4 h-4" />
-          {property.bedrooms}
+          <Users className="w-4 h-4" />
+          {service.teamSize} Mitarbeiter
         </span>
       )}
-      {property.bathrooms && (
+      {service.interval && (
         <span className="flex items-center gap-1.5">
-          <Bath className="w-4 h-4" />
-          {property.bathrooms}
+          <Clock className="w-4 h-4" />
+          {service.interval}
         </span>
       )}
-      <span className="flex items-center gap-1.5">
-        <Maximize2 className="w-4 h-4" />
-        {property.sqft.toLocaleString()} sq.ft
-      </span>
     </div>
     
-    {/* Price */}
-    {property.price && (
+    {/* Area */}
+    {service.sqm && (
       <p className="text-lg font-semibold text-foreground">
-        $ {property.price.toLocaleString()}
+        bis {service.sqm.toLocaleString()} m²
       </p>
     )}
   </div>
@@ -142,23 +131,23 @@ const FeaturedPropertiesSection = () => {
       {/* Header - Left aligned */}
       <FadeIn direction="up" className="mb-12">
         <span className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light text-foreground mb-6">
-          Featured Properties
+          Unsere Kernbereiche
         </span>
         <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-tight text-foreground leading-tight">
-          DISCOVER HOMES TAILORED TO YOUR
+          PROFESSIONELLE DIENSTLEISTUNGEN
           <br />
-          LIFESTYLE AND NEEDS
+          FÜR JEDES OBJEKT
         </h2>
       </FadeIn>
 
-      {/* 3x2 Property Grid */}
+      {/* 3x2 Service Grid */}
       <StaggerChildren 
         staggerDelay={0.1} 
         direction="up"
         className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8"
       >
-        {properties.map((property) => (
-          <PropertyCard key={property.id} property={property} />
+        {services.map((service) => (
+          <ServiceCard key={service.id} service={service} />
         ))}
       </StaggerChildren>
     </section>

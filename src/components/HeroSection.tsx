@@ -3,9 +3,9 @@ import heroCover from "@/assets/hero-cover.jpg";
 
 const HeroSection = () => {
   const stats = [
-    { number: "200", suffix: "+", label: "Projects Complete" },
-    { number: "70", suffix: "+", label: "Happy Clients" },
-    { number: "$10M", suffix: "+", label: "Project Value" },
+    { number: "13", suffix: "+", label: "Jahre Erfahrung" },
+    { number: "500", suffix: "+", label: "Zufriedene Kunden" },
+    { number: "1000", suffix: "+", label: "Betreute Objekte" },
   ];
 
   return (
@@ -14,7 +14,7 @@ const HeroSection = () => {
         {/* Background Image */}
         <img
           src={heroCover}
-          alt="Luxury modern home with pool and mountain view at dusk"
+          alt="Professionelles Facility Management Team bei der Arbeit"
           className="absolute inset-0 w-full h-full object-cover"
         />
 
@@ -32,18 +32,18 @@ const HeroSection = () => {
           {/* Main Content */}
           <div className="flex-1 flex flex-col justify-center max-w-xl">
             <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-[1.1] tracking-tight mb-6">
-              FIND YOUR PERFECT
+              IHR SCHWEIZER PARTNER
               <br />
-              HOME TODAY
+              FÜR FACILITY SERVICES
             </h1>
 
             <p className="text-white/70 text-sm md:text-base leading-relaxed mb-8 max-w-md">
-              We provide tailored real estate solutions, guiding you through every step with
-              personalized experiences that meet your unique needs and aspirations.
+              Wir bieten ganzheitliche Lösungen für Reinigung, Hauswartung und Gebäudemanagement – 
+              professionell, zuverlässig und massgeschneidert für Ihre Bedürfnisse.
             </p>
 
             <button className="btn-explore w-fit">
-              <span>Explore Properties</span>
+              <span>Unsere Dienstleistungen</span>
               <span className="w-7 h-7 rounded-full bg-primary flex items-center justify-center">
                 <ArrowUpRight className="w-4 h-4 text-white" />
               </span>

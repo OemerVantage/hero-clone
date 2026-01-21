@@ -13,45 +13,45 @@ interface Testimonial {
 const testimonials: Testimonial[] = [
   {
     id: 1,
-    quote: "Buying my vacation home was surprisingly easy. Sophia really knew her stuff and made the whole process super smooth. I didn't have to worry about a thing.",
-    name: "Nathan Harper",
-    role: "Software Developer",
+    quote: "BeFi kümmert sich um unsere 12 Liegenschaften. Die Hauswartung ist einwandfrei und die Kommunikation vorbildlich. Wir sind sehr zufrieden.",
+    name: "Thomas Müller",
+    role: "Immobilienverwaltung",
     avatar: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=100&h=100&fit=crop&crop=face"
   },
   {
     id: 2,
-    quote: "Emily walked me through every step of my green home investment. She explained things clearly, gave great advice, and honestly just made it all feel doable.",
-    name: "Logan Price",
-    role: "Environmental Consultant",
-    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
-  },
-  {
-    id: 3,
-    quote: "Isabella was amazing — super friendly and detail-oriented. I found the perfect rental without any of the usual stress. It actually felt fun.",
-    name: "Aria Sullivan",
-    role: "Digital Nomad",
-    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
-  },
-  {
-    id: 4,
-    quote: "I had no idea where to start with property investment, but Emily made it all make sense. She was patient, clear, and completely on my side the whole time.",
-    name: "Grace Powell",
-    role: "Financial Consultant",
+    quote: "Die regelmässige Büroreinigung ist top – unser Team fühlt sich wohl und wir können uns voll auf unser Geschäft konzentrieren.",
+    name: "Sarah Keller",
+    role: "Geschäftsführerin KMU",
     avatar: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=100&h=100&fit=crop&crop=face"
   },
   {
+    id: 3,
+    quote: "Wir setzen auf BeFi für unsere Industrieanlage. Pünktlich, professionell und sehr flexibel bei Sondereinsätzen. Absolute Empfehlung!",
+    name: "Marco Bernasconi",
+    role: "Facility Manager",
+    avatar: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=100&h=100&fit=crop&crop=face"
+  },
+  {
+    id: 4,
+    quote: "Die Umzugsreinigung war perfekt. Wohnungsabnahme ohne Beanstandung. Absolut empfehlenswert für jeden Umzug!",
+    name: "Andrea Hofmann",
+    role: "Privatkundin",
+    avatar: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=100&h=100&fit=crop&crop=face"
+  },
+  {
     id: 5,
-    quote: "I thought the rental process would be a nightmare, but Olivia made it simple. She's sharp, supportive, and gave me a lot of confidence.",
-    name: "Scarlett Mitchell",
-    role: "Event Planner",
-    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face"
+    quote: "Winterdienst und Gartenpflege das ganze Jahr – BeFi macht einfach alles richtig. Sehr zuverlässig und immer erreichbar.",
+    name: "Peter Zimmermann",
+    role: "Liegenschaftsbesitzer",
+    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
   },
   {
     id: 6,
-    quote: "Charlotte totally got what I was looking for. Her design sense and guidance helped me find a home that fits me perfectly. Loved working with her.",
-    name: "Samuel Brooks",
-    role: "Interior Designer",
-    avatar: "https://images.unsplash.com/photo-1500648767791-00dcc994a43e?w=100&h=100&fit=crop&crop=face"
+    quote: "Für unsere Arztpraxis brauchen wir höchste Hygienestandards. BeFi liefert konstant hervorragende Qualität. Sehr professionell.",
+    name: "Claudia Weber",
+    role: "Praxismanagerin",
+    avatar: "https://images.unsplash.com/photo-1534528741775-53994a69daeb?w=100&h=100&fit=crop&crop=face"
   }
 ];
 
@@ -99,19 +99,18 @@ const TestimonialsSection = () => {
         {/* Left Column - Header */}
         <FadeIn direction="right" className="lg:w-1/3 lg:sticky lg:top-24">
           <span className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light text-foreground mb-6">
-            What Our Clients Say
+            Kundenstimmen
           </span>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold uppercase tracking-tight text-foreground leading-tight mb-6">
-            TRUSTED BY MANY,
+            VERTRAUEN SIE
             <br />
-            LOVED BY ALL
+            AUF UNSERE EXPERTISE
           </h2>
           
           <p className="text-lg font-light text-foreground leading-relaxed">
-            Our clients' success stories reflect our commitment to excellence. 
-            See how we've helped them find their dream homes, sustainable investments, 
-            and perfect getaways.
+            Unsere Kunden schätzen unsere Zuverlässigkeit, Qualität und persönliche Betreuung. 
+            Lesen Sie, was sie über die Zusammenarbeit mit BeFi sagen.
           </p>
         </FadeIn>
         

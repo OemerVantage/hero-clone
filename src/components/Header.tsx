@@ -1,7 +1,7 @@
 import { ArrowUpRight } from "lucide-react";
 
 const Header = () => {
-  const navLinks = ["Home", "Services", "Properties", "About", "Agents"];
+  const navLinks = ["Home", "Dienstleistungen", "Über uns", "Referenzen", "Kontakt"];
 
   return (
     <header className="w-full py-5 px-6 md:px-12 flex items-center justify-between bg-background">
@@ -15,21 +15,12 @@ const Header = () => {
           xmlns="http://www.w3.org/2000/svg"
           className="text-foreground"
         >
-          <path
-            d="M4 24L10 8L16 20L22 8L28 24"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-            strokeLinejoin="round"
-          />
-          <path
-            d="M7 24H25"
-            stroke="currentColor"
-            strokeWidth="2.5"
-            strokeLinecap="round"
-          />
+          <rect x="4" y="8" width="24" height="16" rx="2" stroke="currentColor" strokeWidth="2.5" />
+          <path d="M4 14H28" stroke="currentColor" strokeWidth="2" />
+          <path d="M10 14V24" stroke="currentColor" strokeWidth="2" />
+          <path d="M22 14V24" stroke="currentColor" strokeWidth="2" />
         </svg>
-        <span className="text-lg font-semibold tracking-tight">VISTAHAVEN</span>
+        <span className="text-lg font-semibold tracking-tight">BEFI</span>
       </div>
 
       {/* Navigation */}
@@ -44,7 +35,7 @@ const Header = () => {
       {/* Contact Button */}
       <button className="btn-contact">
         <span className="w-2 h-2 rounded-full bg-accent" />
-        <span>Contact Us Now</span>
+        <span>Jetzt anfragen</span>
         <ArrowUpRight className="w-4 h-4" />
       </button>
     </header>
