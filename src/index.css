@@ -101,4 +101,13 @@
   .stat-label {
     @apply text-xs md:text-sm text-white/70 font-medium;
   }
+
+  .section-badge {
+    @apply inline-flex items-center px-4 py-2 rounded-full border border-border text-sm font-medium text-foreground;
+  }
+
+  .vertical-text {
+    writing-mode: vertical-rl;
+    transform: rotate(180deg);
+  }
 }
