@@ -34,6 +34,29 @@ const values = [
   }
 ];
 
+const teamMembers = [
+  {
+    name: "Fisnik Dauti",
+    position: "Geschäftsführer & Gründer",
+    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
+  },
+  {
+    name: "Maria Müller",
+    position: "Leiterin Reinigung",
+    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
+  },
+  {
+    name: "Thomas Weber",
+    position: "Leiter Hauswartung",
+    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
+  },
+  {
+    name: "Sarah Schneider",
+    position: "Kundenbetreuung",
+    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
+  },
+];
+
 const UeberUns = () => {
   return (
     <div className="min-h-screen bg-background">
@@ -170,6 +193,55 @@ const UeberUns = () => {
               </h3>
               <p className="text-foreground font-light text-sm leading-relaxed">
                 {value.description}
+              </p>
+            </div>
+          ))}
+        </StaggerChildren>
+      </section>
+
+      {/* Team Section */}
+      <section className="py-16 md:py-24 px-6 md:px-12 lg:px-20 xl:px-[240px]">
+        <FadeIn direction="up">
+          {/* Two-Column Header */}
+          <div className="flex flex-col lg:flex-row gap-8 lg:gap-12 mb-12">
+            <div className="lg:w-2/5">
+              <div className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light mb-6">
+                Unser Team
+              </div>
+              <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-tight leading-tight text-foreground">
+                DIE MENSCHEN HINTER BEFI
+              </h2>
+            </div>
+            <div className="lg:w-3/5 flex items-end">
+              <p className="text-lg font-light text-foreground leading-relaxed">
+                Lernen Sie die Menschen kennen, die täglich für Ihre Zufriedenheit 
+                arbeiten. Unser erfahrenes Team vereint Fachkompetenz mit Leidenschaft.
+              </p>
+            </div>
+          </div>
+        </FadeIn>
+
+        <StaggerChildren
+          className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6"
+          staggerDelay={0.1}
+        >
+          {teamMembers.map((member) => (
+            <div
+              key={member.name}
+              className="bg-secondary rounded-[32px] p-8 flex flex-col items-center text-center"
+            >
+              <div className="w-28 h-28 rounded-full overflow-hidden mb-6">
+                <img 
+                  src={member.image} 
+                  alt={member.name}
+                  className="w-full h-full object-cover"
+                />
+              </div>
+              <h3 className="text-lg font-semibold text-foreground mb-1">
+                {member.name}
+              </h3>
+              <p className="text-sm font-light text-foreground/60">
+                {member.position}
               </p>
             </div>
           ))}
