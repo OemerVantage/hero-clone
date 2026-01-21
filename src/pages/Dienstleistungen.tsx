@@ -2,7 +2,7 @@ import Header from "@/components/Header";
 import ContactSection from "@/components/ContactSection";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerChildren from "@/components/motion/StaggerChildren";
-import { Sparkles, Wrench, Trees, Home, Building, Factory, Building2, ArrowUpRight } from "lucide-react";
+import { Home, Building, Factory, Building2, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const heroStats = [
@@ -13,50 +13,18 @@ const heroStats = [
 
 const serviceAreas = [
   {
-    icon: <Sparkles className="w-6 h-6 text-foreground" />,
-    badge: "Reinigung & Unterhalt",
-    title: "PROFESSIONELLE REINIGUNG FÜR JEDEN BEREICH",
+    title: "Reinigung & Unterhalt",
     description: "Professionelle Reinigungsarbeiten für Wohnungen, Büros, Industrie- und Gewerberäume. Wir sorgen für makellose Sauberkeit mit modernsten Techniken und umweltfreundlichen Mitteln.",
-    services: [
-      "Unterhaltsreinigung (regelmässig)",
-      "Grundreinigung & Tiefenreinigung",
-      "Spezialreinigung (Böden, Teppiche, Polster)",
-      "Fenster- und Fassadenreinigung",
-      "Bau- und Bauendreinigung",
-      "Industriereinigung (Anlagen, Werkstätten)",
-      "Umzugsreinigung",
-      "Dachrinnenreinigung (SkyVac-Technik)"
-    ],
     image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
   },
   {
-    icon: <Wrench className="w-6 h-6 text-foreground" />,
-    badge: "Hauswartung & Technischer Service",
-    title: "WARTUNG UND BETREUUNG IHRER LIEGENSCHAFT",
+    title: "Hauswartung & Technischer Service",
     description: "Laufende Betreuung und Pflege von Immobilien – technisch und organisatorisch. Wir sorgen für Funktionalität, Sicherheit und Werterhalt Ihrer Liegenschaft.",
-    services: [
-      "Überwachung und Wartung der Haustechnik",
-      "Kontrolle Heizung, Lüftung, Sanitär",
-      "Pflege technischer Anlagen",
-      "Koordination von Fremdfirmen",
-      "Winterdienst (Schneeräumen, Eisbekämpfung)",
-      "Notdienst & Pikettdienst nach Bedarf"
-    ],
     image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"
   },
   {
-    icon: <Trees className="w-6 h-6 text-foreground" />,
-    badge: "Garten & Aussenanlagen",
-    title: "GEPFLEGTE GRÜNANLAGEN DAS GANZE JAHR",
+    title: "Garten & Aussenanlagen",
     description: "Gartenpflege und Grünflächenbetreuung für gepflegte und einladende Aussenbereiche. Das ganze Jahr über kümmern wir uns um Ihre Grünanlagen.",
-    services: [
-      "Rasen- und Wiesenpflege inkl. Düngung",
-      "Herbst- und Winterarbeiten",
-      "Hecken- und Strauchschnitt",
-      "Professionelle Baumarbeiten",
-      "Entsorgung von Grüngut",
-      "Pflege von Beeten und Pflanzflächen"
-    ],
     image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80"
   }
 ];
@@ -148,54 +116,44 @@ const Dienstleistungen = () => {
         </div>
       </section>
 
-      {/* Service Areas - Asymmetric Two-Column Layout */}
+      {/* Service Areas - Compact Layout */}
       {serviceAreas.map((service, index) => {
         const isReversed = index % 2 === 1;
         
         return (
           <section 
-            key={service.badge}
-            className="py-16 md:py-24 px-6 md:px-12 lg:px-20 xl:px-[240px]"
+            key={service.title}
+            className="py-20 md:py-28 px-6 md:px-12 lg:px-20 xl:px-[240px]"
           >
             <FadeIn direction="up">
-              <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-8 lg:gap-12`}>
-                {/* Text Content - 40% */}
-                <div className="lg:w-2/5 flex flex-col justify-center">
-                  <div className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light mb-6 w-fit">
-                    {service.badge}
+              <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-16 items-center`}>
+                {/* Image - Compact */}
+                <div className="lg:w-[45%] flex justify-center">
+                  <div className="rounded-[24px] overflow-hidden max-w-[500px] w-full">
+                    <img 
+                      src={service.image} 
+                      alt={service.title} 
+                      className="w-full h-auto object-cover aspect-[4/3]"
+                    />
                   </div>
-                  
-                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold uppercase tracking-tight leading-tight text-foreground mb-6">
+                </div>
+                
+                {/* Text Content */}
+                <div className="lg:w-[55%]">
+                  <h2 className="text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-4">
                     {service.title}
                   </h2>
                   
-                  <p className="text-lg font-light text-foreground leading-relaxed mb-8">
+                  <p className="text-lg text-foreground/80 leading-relaxed mb-8">
                     {service.description}
                   </p>
                   
-                  <ul className="space-y-3">
-                    {service.services.map((item, i) => (
-                      <li key={i} className="flex items-start gap-3 text-foreground">
-                        <span className="w-2 h-2 rounded-full bg-accent mt-2 flex-shrink-0" />
-                        <span className="font-light">{item}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-                
-                {/* Image - 60% */}
-                <div className="lg:w-3/5">
-                  <div className="relative rounded-[32px] overflow-hidden aspect-[4/3]">
-                    <img 
-                      src={service.image} 
-                      alt={service.badge} 
-                      className="w-full h-full object-cover"
-                    />
-                    {/* Icon Badge on Image */}
-                    <div className="absolute top-6 left-6 w-14 h-14 bg-white rounded-full flex items-center justify-center shadow-lg">
-                      {service.icon}
-                    </div>
-                  </div>
+                  <Link 
+                    to="/#contact" 
+                    className="inline-flex items-center gap-2 bg-accent hover:bg-accent/90 text-accent-foreground px-8 py-3 rounded-full font-medium transition-colors"
+                  >
+                    Mehr erfahren
+                  </Link>
                 </div>
               </div>
             </FadeIn>
