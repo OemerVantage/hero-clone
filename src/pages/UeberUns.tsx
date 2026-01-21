@@ -3,7 +3,7 @@ import ContactSection from "@/components/ContactSection";
 import Footer from "@/components/Footer";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerChildren from "@/components/motion/StaggerChildren";
-import { CheckCircle, Shield, Leaf, Users, Eye, Target, ArrowUpRight } from "lucide-react";
+import { ArrowUpRight, Building, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const companyStats = [
@@ -12,78 +12,21 @@ const companyStats = [
   { number: "1000", suffix: "+", label: "Betreute Objekte" },
 ];
 
-const values = [
+const subPages = [
   {
-    icon: <CheckCircle className="w-6 h-6 text-foreground" />,
-    title: "Qualität",
-    description: "Höchste Standards bei allen unseren Dienstleistungen – ohne Kompromisse."
-  },
-  {
-    icon: <Shield className="w-6 h-6 text-foreground" />,
-    title: "Zuverlässigkeit",
-    description: "Pünktlich, verlässlich und immer erreichbar – darauf können Sie zählen."
-  },
-  {
-    icon: <Leaf className="w-6 h-6 text-foreground" />,
-    title: "Nachhaltigkeit",
-    description: "Umweltbewusste Reinigungsmittel und ressourcenschonende Arbeitsweisen."
+    icon: <Building className="w-6 h-6 text-foreground" />,
+    title: "Unternehmen & Geschichte",
+    description: "Entdecken Sie unsere Meilensteine, Vision und Mission – von der Gründung bis heute.",
+    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80",
+    link: "/ueber-uns/unternehmen"
   },
   {
     icon: <Users className="w-6 h-6 text-foreground" />,
-    title: "Kundenorientierung",
-    description: "Individuelle Lösungen, die exakt auf Ihre Bedürfnisse zugeschnitten sind."
+    title: "Unser Team",
+    description: "Lernen Sie die Menschen kennen, die täglich für Ihre Zufriedenheit arbeiten.",
+    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+    link: "/ueber-uns/team"
   }
-];
-
-const milestones = [
-  {
-    year: "2011",
-    title: "Gründung in Winterthur",
-    description: "Fisnik Dauti gründet BeFi als kleines Reinigungsunternehmen mit einer Vision für exzellenten Service."
-  },
-  {
-    year: "2015",
-    title: "Erste Grosskunden",
-    description: "Erweiterung des Kundenportfolios um gewerbliche und industrielle Auftraggeber."
-  },
-  {
-    year: "2018",
-    title: "Qualitätszertifizierung",
-    description: "ISO 9001 Zertifizierung und Einführung standardisierter Qualitätsprozesse."
-  },
-  {
-    year: "2022",
-    title: "Wachstum & Expansion",
-    description: "50 Mitarbeiter stark, Ausbau der Dienstleistungen auf die ganze Deutschschweiz."
-  },
-  {
-    year: "2025",
-    title: "Digitale Transformation",
-    description: "Einführung digitaler Tools für effizientere Abläufe und bessere Kundenbetreuung."
-  }
-];
-
-const teamMembers = [
-  {
-    name: "Fisnik Dauti",
-    position: "Geschäftsführer & Gründer",
-    image: "https://images.unsplash.com/photo-1560250097-0b93528c311a?w=400&q=80",
-  },
-  {
-    name: "Maria Müller",
-    position: "Leiterin Reinigung",
-    image: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?w=400&q=80",
-  },
-  {
-    name: "Thomas Weber",
-    position: "Leiter Hauswartung",
-    image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&q=80",
-  },
-  {
-    name: "Sarah Schneider",
-    position: "Kundenbetreuung",
-    image: "https://images.unsplash.com/photo-1580489944761-15a19d654956?w=400&q=80",
-  },
 ];
 
 const UeberUns = () => {
@@ -133,283 +76,79 @@ const UeberUns = () => {
         </div>
       </section>
 
-      {/* Unternehmensgeschichte Section */}
+      {/* Stats Section */}
       <section className="py-8 md:py-10 lg:py-14">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <FadeIn direction="up">
-            <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
-              {/* Image */}
-              <div className="w-full lg:w-[45%] flex justify-center">
-                <div className="rounded-[20px] md:rounded-[24px] overflow-hidden max-w-[500px] w-full">
-                  <img
-                    src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80"
-                    alt="BeFi Firmengebäude"
-                    className="w-full h-auto object-cover aspect-[4/3]"
-                  />
-                </div>
-              </div>
-
-              {/* Text Content */}
-              <div className="w-full lg:w-[55%]">
-                <div className="inline-flex items-center px-4 md:px-6 py-2 bg-secondary border border-border rounded-full text-base md:text-lg font-light mb-4 md:mb-6">
-                  Unsere Geschichte
-                </div>
-                
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-4">
-                  SEIT 2011 IHR PARTNER
-                </h2>
-
-                <p className="text-base md:text-lg text-foreground/80 leading-relaxed mb-6 md:mb-8">
-                  Die BeFi Facility Services AG wurde 2011 von Fisnik Dauti in Winterthur gegründet. 
-                  Was als kleines Reinigungsunternehmen begann, ist heute ein etablierter Partner 
-                  für ganzheitliche Facility Services in der gesamten Deutschschweiz. Mit Leidenschaft, 
-                  Fachkompetenz und einem engagierten Team betreuen wir Privatkunden, Gewerbebetriebe 
-                  und Industrieunternehmen.
-                </p>
-
-                {/* Stats Grid */}
-                <div className="grid grid-cols-3 gap-3 md:gap-4">
-                  {companyStats.map((stat) => (
-                    <div key={stat.label} className="text-center">
-                      <div className="text-xl sm:text-2xl md:text-3xl font-bold text-foreground">
-                        {stat.number}<span className="text-accent">{stat.suffix}</span>
-                      </div>
-                      <div className="text-xs md:text-sm text-foreground/60 mt-1">{stat.label}</div>
-                    </div>
-                  ))}
-                </div>
-              </div>
-            </div>
-          </FadeIn>
-        </div>
-      </section>
-
-      {/* Timeline Section */}
-      <section className="py-12 md:py-16 lg:py-24 bg-background">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
-          <FadeIn direction="up">
-            {/* Two-Column Header */}
-            <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 mb-8 md:mb-12">
-              <div className="lg:w-2/5">
-                <div className="inline-flex items-center px-4 md:px-6 py-2 bg-secondary border border-border rounded-full text-base md:text-lg font-light mb-4 md:mb-6">
-                  Unsere Meilensteine
-                </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-tight leading-tight text-foreground">
-                  DIE ENTWICKLUNG VON BEFI
-                </h2>
-              </div>
-              <div className="lg:w-3/5 flex items-end">
-                <p className="text-base md:text-lg font-light text-foreground leading-relaxed">
-                  Von der Gründung bis heute – entdecken Sie die wichtigsten 
-                  Meilensteine unserer Unternehmensgeschichte.
-                </p>
-              </div>
-            </div>
-          </FadeIn>
-
-          {/* Timeline */}
-          <div className="relative">
-            {/* Vertical Line - Hidden on mobile, shown on lg */}
-            <div className="hidden lg:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
-            
-            {/* Mobile Line */}
-            <div className="lg:hidden absolute left-4 top-0 bottom-0 w-0.5 bg-border" />
-
-            <StaggerChildren
-              className="flex flex-col gap-6 md:gap-8"
-              staggerDelay={0.15}
-            >
-              {milestones.map((milestone, index) => {
-                const isLeft = index % 2 === 0;
-                
-                return (
-                  <div 
-                    key={milestone.year}
-                    className={`relative flex items-start gap-4 md:gap-6 lg:gap-8 ${
-                      isLeft ? 'lg:flex-row' : 'lg:flex-row-reverse'
-                    }`}
-                  >
-                    {/* Content Card */}
-                    <div className={`flex-1 ml-10 lg:ml-0 bg-secondary rounded-[20px] md:rounded-[24px] p-5 md:p-6 lg:p-8 ${
-                      isLeft ? 'lg:text-right' : 'lg:text-left'
-                    }`}>
-                      <span className="text-2xl md:text-3xl font-bold text-foreground">
-                        {milestone.year}
-                      </span>
-                      <h3 className="text-base md:text-lg font-semibold text-foreground mt-2 mb-2">
-                        {milestone.title}
-                      </h3>
-                      <p className="text-sm text-foreground/70 font-light leading-relaxed">
-                        {milestone.description}
-                      </p>
-                    </div>
-
-                    {/* Timeline Dot - Mobile */}
-                    <div className="lg:hidden absolute left-4 top-6 w-4 h-4 bg-foreground rounded-full -translate-x-1/2 z-10" />
-
-                    {/* Timeline Dot - Desktop */}
-                    <div className="hidden lg:flex absolute left-1/2 top-6 w-4 h-4 bg-foreground rounded-full -translate-x-1/2 z-10" />
-
-                    {/* Spacer for opposite side on desktop */}
-                    <div className="hidden lg:block flex-1" />
+            <div className="grid grid-cols-3 gap-4 md:gap-8">
+              {companyStats.map((stat) => (
+                <div key={stat.label} className="text-center">
+                  <div className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-foreground">
+                    {stat.number}<span className="text-accent">{stat.suffix}</span>
                   </div>
-                );
-              })}
-            </StaggerChildren>
-          </div>
-        </div>
-      </section>
-
-      {/* Werte Section */}
-      <section className="py-12 md:py-16 lg:py-24 bg-secondary">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
-          <FadeIn direction="up">
-            {/* Two-Column Header */}
-            <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 mb-8 md:mb-12">
-              <div className="lg:w-2/5">
-                <div className="inline-flex items-center px-4 md:px-6 py-2 bg-background border border-border rounded-full text-base md:text-lg font-light mb-4 md:mb-6">
-                  Unsere Werte
+                  <div className="text-sm md:text-base text-foreground/60 mt-1 md:mt-2">{stat.label}</div>
                 </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-tight leading-tight text-foreground">
-                  WOFÜR WIR STEHEN
-                </h2>
-              </div>
-              <div className="lg:w-3/5 flex items-end">
-                <p className="text-base md:text-lg font-light text-foreground leading-relaxed">
-                  Unsere Arbeit basiert auf klaren Werten, die wir täglich leben. 
-                  Sie sind das Fundament für langfristige Partnerschaften und 
-                  erstklassige Ergebnisse.
-                </p>
-              </div>
+              ))}
             </div>
           </FadeIn>
-
-          <StaggerChildren
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
-            staggerDelay={0.1}
-          >
-            {values.map((value) => (
-              <div
-                key={value.title}
-                className="bg-background rounded-[24px] md:rounded-[32px] p-6 md:p-8"
-              >
-                <div className="w-12 h-12 md:w-14 md:h-14 bg-secondary rounded-full flex items-center justify-center mb-4 md:mb-6">
-                  {value.icon}
-                </div>
-                <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2 md:mb-3">
-                  {value.title}
-                </h3>
-                <p className="text-foreground font-light text-sm leading-relaxed">
-                  {value.description}
-                </p>
-              </div>
-            ))}
-          </StaggerChildren>
         </div>
       </section>
 
-      {/* Team Section */}
+      {/* Sub-Pages Navigation */}
       <section className="py-12 md:py-16 lg:py-24">
         <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
           <FadeIn direction="up">
-            {/* Two-Column Header */}
-            <div className="flex flex-col lg:flex-row gap-6 md:gap-8 lg:gap-12 mb-8 md:mb-12">
-              <div className="lg:w-2/5">
-                <div className="inline-flex items-center px-4 md:px-6 py-2 bg-secondary border border-border rounded-full text-base md:text-lg font-light mb-4 md:mb-6">
-                  Unser Team
-                </div>
-                <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-tight leading-tight text-foreground">
-                  DIE MENSCHEN HINTER BEFI
-                </h2>
+            <div className="text-center mb-8 md:mb-12">
+              <div className="inline-flex items-center px-4 md:px-6 py-2 bg-secondary border border-border rounded-full text-base md:text-lg font-light mb-4 md:mb-6">
+                Mehr erfahren
               </div>
-              <div className="lg:w-3/5 flex items-end">
-                <p className="text-base md:text-lg font-light text-foreground leading-relaxed">
-                  Lernen Sie die Menschen kennen, die täglich für Ihre Zufriedenheit 
-                  arbeiten. Unser erfahrenes Team vereint Fachkompetenz mit Leidenschaft.
-                </p>
-              </div>
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-tight leading-tight text-foreground">
+                ENTDECKEN SIE BEFI
+              </h2>
             </div>
           </FadeIn>
 
           <StaggerChildren
-            className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6"
-            staggerDelay={0.1}
+            className="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-8"
+            staggerDelay={0.15}
           >
-            {teamMembers.map((member) => (
-              <div
-                key={member.name}
-                className="bg-secondary rounded-[24px] md:rounded-[32px] p-6 md:p-8 flex flex-col items-center text-center"
+            {subPages.map((page) => (
+              <Link
+                key={page.title}
+                to={page.link}
+                className="group bg-secondary rounded-[24px] md:rounded-[32px] overflow-hidden hover:shadow-lg transition-shadow"
               >
-                <div className="w-24 h-24 md:w-28 md:h-28 rounded-full overflow-hidden mb-4 md:mb-6">
+                {/* Image */}
+                <div className="aspect-[16/9] overflow-hidden">
                   <img 
-                    src={member.image} 
-                    alt={member.name}
-                    className="w-full h-full object-cover"
+                    src={page.image} 
+                    alt={page.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
-                <h3 className="text-base md:text-lg font-semibold text-foreground mb-1">
-                  {member.name}
-                </h3>
-                <p className="text-sm font-light text-foreground/60">
-                  {member.position}
-                </p>
-              </div>
+                
+                {/* Content */}
+                <div className="p-6 md:p-8">
+                  <div className="flex items-start justify-between gap-4">
+                    <div>
+                      <div className="w-12 h-12 bg-background rounded-full flex items-center justify-center mb-4">
+                        {page.icon}
+                      </div>
+                      <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2">
+                        {page.title}
+                      </h3>
+                      <p className="text-foreground/70 font-light text-sm md:text-base leading-relaxed">
+                        {page.description}
+                      </p>
+                    </div>
+                    <div className="w-10 h-10 bg-background rounded-full flex items-center justify-center shrink-0 group-hover:bg-foreground group-hover:text-background transition-colors">
+                      <ArrowUpRight className="w-5 h-5" />
+                    </div>
+                  </div>
+                </div>
+              </Link>
             ))}
           </StaggerChildren>
-        </div>
-      </section>
-
-      {/* Vision & Mission Section */}
-      <section className="py-8 md:py-10 lg:py-14">
-        <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
-          <FadeIn direction="up">
-            <div className="flex flex-col lg:flex-row gap-8 md:gap-12 lg:gap-16 items-center">
-              {/* Text Content */}
-              <div className="w-full lg:w-[40%]">
-                <div className="inline-flex items-center px-4 md:px-6 py-2 bg-secondary border border-border rounded-full text-base md:text-lg font-light mb-4 md:mb-6">
-                  Vision & Mission
-                </div>
-
-                <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl font-bold text-foreground mb-3 md:mb-4">
-                  UNSER WEG IN DIE ZUKUNFT
-                </h2>
-
-                <p className="text-base md:text-lg text-foreground/80 leading-relaxed">
-                  Mit klarer Vision und starker Mission gestalten wir die Zukunft 
-                  der Facility Services – nachhaltig, innovativ und immer nah am Kunden.
-                </p>
-              </div>
-
-              {/* Vision & Mission Cards */}
-              <div className="w-full lg:w-[60%] flex flex-col gap-4 md:gap-6">
-                <div className="bg-secondary rounded-[24px] md:rounded-[32px] p-6 md:p-8 flex gap-4 md:gap-6">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-background rounded-full flex items-center justify-center shrink-0">
-                    <Eye className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2">Vision</h3>
-                    <p className="text-sm md:text-base text-foreground font-light leading-relaxed">
-                      Der führende Anbieter für nachhaltige Facility Services in der Schweiz zu sein – 
-                      bekannt für Qualität, Innovation und Kundenzufriedenheit.
-                    </p>
-                  </div>
-                </div>
-
-                <div className="bg-secondary rounded-[24px] md:rounded-[32px] p-6 md:p-8 flex gap-4 md:gap-6">
-                  <div className="w-12 h-12 md:w-14 md:h-14 bg-background rounded-full flex items-center justify-center shrink-0">
-                    <Target className="w-5 h-5 md:w-6 md:h-6 text-foreground" />
-                  </div>
-                  <div>
-                    <h3 className="text-lg md:text-xl font-semibold text-foreground mb-2">Mission</h3>
-                    <p className="text-sm md:text-base text-foreground font-light leading-relaxed">
-                      Wir schaffen saubere, sichere und gepflegte Umgebungen, in denen Menschen 
-                      gerne leben und arbeiten – mit Kompetenz, Engagement und persönlicher Betreuung.
-                    </p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </FadeIn>
         </div>
       </section>
 
@@ -428,7 +167,7 @@ const UeberUns = () => {
                 </p>
               </div>
               <div className="w-full lg:w-2/5 flex justify-center lg:justify-end">
-                <Link to="/#contact" className="btn-explore text-sm md:text-base">
+                <Link to="/kontakt" className="btn-explore text-sm md:text-base">
                   <span>Jetzt Kontakt aufnehmen</span>
                   <span className="w-6 h-6 md:w-7 md:h-7 rounded-full bg-primary flex items-center justify-center">
                     <ArrowUpRight className="w-3 h-3 md:w-4 md:h-4 text-white" />
