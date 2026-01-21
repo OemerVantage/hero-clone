@@ -123,7 +123,7 @@ const Dienstleistungen = () => {
         return (
           <section 
             key={service.title}
-            className="py-20 md:py-28 px-6 md:px-12 lg:px-20 xl:px-[240px]"
+            className="py-10 md:py-14 px-6 md:px-12 lg:px-20 xl:px-[240px]"
           >
             <FadeIn direction="up">
               <div className={`flex flex-col ${isReversed ? 'lg:flex-row-reverse' : 'lg:flex-row'} gap-12 lg:gap-16 items-center`}>
