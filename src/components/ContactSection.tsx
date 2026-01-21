@@ -23,8 +23,8 @@ const ContactSection = () => {
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
     toast({
-      title: "Message sent!",
-      description: "We'll get back to you shortly.",
+      title: "Nachricht gesendet!",
+      description: "Wir melden uns schnellstmöglich bei Ihnen.",
     });
     setFormData({
       firstName: "",
@@ -42,7 +42,7 @@ const ContactSection = () => {
       <div 
         className="absolute inset-0 bg-cover bg-center bg-no-repeat"
         style={{ 
-          backgroundImage: `url('https://images.unsplash.com/photo-1600596542815-ffad4c1539a9?w=1920&q=80')` 
+          backgroundImage: `url('https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&q=80')` 
         }}
       />
       
@@ -52,17 +52,17 @@ const ContactSection = () => {
         {/* Header */}
         <FadeIn direction="up" className="text-center max-w-2xl mb-12">
           <span className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light text-foreground mb-6">
-            Get in Touch
+            Kontakt
           </span>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold uppercase tracking-tight text-foreground leading-tight mb-6">
-            LET'S MAKE YOUR PROPERTY JOURNEY EFFORTLESS
+            LASSEN SIE UNS ÜBER IHRE ANFORDERUNGEN SPRECHEN
           </h2>
           
           <p className="text-lg font-light text-foreground leading-relaxed">
-            Have questions or ready to take the next step? Whether you're looking 
-            to buy, rent, or invest, our team is here to guide you every step of 
-            the way. Let's turn your property goals into reality.
+            Haben Sie Fragen oder möchten Sie eine unverbindliche Offerte? 
+            Unser Team in Winterthur berät Sie gerne persönlich. 
+            Wir freuen uns auf Ihre Nachricht!
           </p>
         </FadeIn>
         
@@ -76,14 +76,14 @@ const ContactSection = () => {
                 name="firstName"
                 value={formData.firstName}
                 onChange={handleChange}
-                placeholder="First Name" 
+                placeholder="Vorname" 
                 className="border-0 border-b border-border rounded-none bg-transparent focus-visible:ring-0 focus-visible:border-foreground h-12"
               />
               <Input 
                 name="lastName"
                 value={formData.lastName}
                 onChange={handleChange}
-                placeholder="Last Name" 
+                placeholder="Nachname" 
                 className="border-0 border-b border-border rounded-none bg-transparent focus-visible:ring-0 focus-visible:border-foreground h-12"
               />
             </div>
@@ -95,7 +95,7 @@ const ContactSection = () => {
                 name="email"
                 value={formData.email}
                 onChange={handleChange}
-                placeholder="Email" 
+                placeholder="E-Mail" 
                 className="border-0 border-b border-border rounded-none bg-transparent focus-visible:ring-0 focus-visible:border-foreground h-12"
               />
               <Input 
@@ -103,7 +103,7 @@ const ContactSection = () => {
                 name="phone"
                 value={formData.phone}
                 onChange={handleChange}
-                placeholder="Phone" 
+                placeholder="Telefon" 
                 className="border-0 border-b border-border rounded-none bg-transparent focus-visible:ring-0 focus-visible:border-foreground h-12"
               />
             </div>
@@ -113,7 +113,7 @@ const ContactSection = () => {
               name="message"
               value={formData.message}
               onChange={handleChange}
-              placeholder="What Can We Help You?"
+              placeholder="Wie können wir Ihnen helfen?"
               className="border-0 border-b border-border rounded-none bg-transparent focus-visible:ring-0 focus-visible:border-foreground min-h-[100px] resize-none mb-8"
             />
             
@@ -122,7 +122,7 @@ const ContactSection = () => {
               type="submit"
               className="w-full bg-foreground text-background hover:bg-foreground/90 rounded-full py-6 text-base font-medium"
             >
-              Book a Call
+              Anfrage senden
             </Button>
             
           </form>

@@ -1,4 +1,4 @@
-import { FileText, Layers, Key, TrendingUp, BarChart2, Settings } from "lucide-react";
+import { Sparkles, SprayCan, Wrench, Snowflake, Trees, Settings } from "lucide-react";
 import FadeIn from "@/components/motion/FadeIn";
 import StaggerChildren from "@/components/motion/StaggerChildren";
 
@@ -10,34 +10,34 @@ interface Service {
 
 const services: Service[] = [
   {
-    icon: <FileText className="w-7 h-7 text-foreground" />,
-    title: "Property Sales",
-    description: "Expertly promoting and selling your property to attract qualified buyers."
+    icon: <Sparkles className="w-7 h-7 text-foreground" />,
+    title: "Unterhaltsreinigung",
+    description: "Regelmässige Reinigung für Büros, Wohnungen und Gewerberäume nach höchsten Standards."
   },
   {
-    icon: <Layers className="w-7 h-7 text-foreground" />,
-    title: "Buyer Representation",
-    description: "Guiding you through the home-buying process, prioritizing your interests."
+    icon: <SprayCan className="w-7 h-7 text-foreground" />,
+    title: "Grundreinigung",
+    description: "Tiefenreinigung, Spezialreinigung und Bauendreinigung für makellose Ergebnisse."
   },
   {
-    icon: <Key className="w-7 h-7 text-foreground" />,
-    title: "Rental Management",
-    description: "Managing tenant relations, maintenance, and finances to maximize rental returns."
+    icon: <Wrench className="w-7 h-7 text-foreground" />,
+    title: "Hauswartung",
+    description: "Technische Betreuung, Wartung und Überwachung Ihrer Immobilie rund ums Jahr."
   },
   {
-    icon: <TrendingUp className="w-7 h-7 text-foreground" />,
-    title: "Investment Consulting",
-    description: "Providing strategic advice to help you capitalize on real estate opportunities."
+    icon: <Snowflake className="w-7 h-7 text-foreground" />,
+    title: "Winterdienst",
+    description: "Schneeräumung und Eisbekämpfung für sichere Zugänge und Wege."
   },
   {
-    icon: <BarChart2 className="w-7 h-7 text-foreground" />,
-    title: "Property Valuation",
-    description: "Accurately assessing your property's value for sales, purchases, or investments."
+    icon: <Trees className="w-7 h-7 text-foreground" />,
+    title: "Gartenpflege",
+    description: "Grünflächenbetreuung, Rasenpflege und professioneller Heckenschnitt."
   },
   {
     icon: <Settings className="w-7 h-7 text-foreground" />,
-    title: "Tailored Solutions",
-    description: "Delivering customized real estate services aligned with your specific goals."
+    title: "Massgeschneiderte Lösungen",
+    description: "Individuelle Servicepakete nach Ihren spezifischen Bedürfnissen."
   }
 ];
 
@@ -66,12 +66,12 @@ const WhyChooseUsSection = () => {
       {/* Header - Centered */}
       <FadeIn direction="up" className="text-center mb-12">
         <span className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light text-foreground mb-6">
-          Why Choose Us
+          Warum BeFi?
         </span>
         <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-tight text-foreground leading-tight">
-          EXPLORE OUR RANGE OF
+          ENTDECKEN SIE UNSERE
           <br />
-          EXPERT REAL ESTATE SERVICES
+          PROFESSIONELLEN FACILITY SERVICES
         </h2>
       </FadeIn>
 

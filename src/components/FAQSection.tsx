@@ -16,36 +16,36 @@ interface FAQ {
 
 const faqs: FAQ[] = [
   {
-    question: "What is the process for buying a property?",
-    answer: "The process typically involves getting pre-approved for a mortgage, searching for properties, making an offer, conducting inspections, and closing the deal. Our team guides you through each step."
+    question: "Welche Reinigungsleistungen bietet BeFi an?",
+    answer: "Wir bieten Unterhalts-, Grund-, Spezial-, Fenster-, Fassaden-, Bau- und Industriereinigung sowie Umzugs- und Dachrinnenreinigung mit modernster SkyVac-Technik."
   },
   {
-    question: "How do I determine how much I can afford?",
-    answer: "We recommend using our affordability calculator and considering factors like your income, existing debts, down payment, and current interest rates. Generally, your monthly payment shouldn't exceed 28-30% of your gross income."
+    question: "In welchen Regionen ist BeFi tätig?",
+    answer: "Unser Hauptsitz ist in Winterthur. Wir bedienen Kunden in Winterthur, Zürich und der gesamten Deutschschweiz – von Privathaushalten bis zu grossen Industrieanlagen."
   },
   {
-    question: "What documents are required for renting a property?",
-    answer: "You'll typically need proof of identity, proof of income (pay stubs or tax returns), references from previous landlords, and a completed rental application. Additional documents may be required depending on the property."
+    question: "Bietet BeFi auch Hauswartungsdienste an?",
+    answer: "Ja, wir übernehmen die technische und organisatorische Betreuung von Immobilien inklusive Wartung der Haustechnik, Koordination von Fremdfirmen und Notdienst."
   },
   {
-    question: "Can I terminate a lease agreement early?",
-    answer: "Early termination is possible but usually involves penalties or fees. Review your lease terms carefully, and contact us to discuss your options. We can help negotiate with landlords on your behalf."
+    question: "Wie funktioniert der Winterdienst?",
+    answer: "Wir bieten Schneeräumung und Eisbekämpfung mit Pikett-Bereitschaft, damit Ihre Zugänge immer sicher sind – auch an Wochenenden und Feiertagen."
   },
   {
-    question: "What are the risks of investing in real estate?",
-    answer: "Real estate investments carry risks including market fluctuations, property damage, vacancy periods, and interest rate changes. We help mitigate these risks through thorough market analysis and property selection."
+    question: "Können Leistungen individuell kombiniert werden?",
+    answer: "Absolut! Wir erstellen massgeschneiderte Servicepakete nach Ihren spezifischen Anforderungen. Ob nur Reinigung oder ein Komplettpaket – wir passen uns an."
   },
   {
-    question: "How do I choose the right property to invest in?",
-    answer: "Consider location, potential rental income, property condition, neighborhood growth trends, and your investment goals. Our experts provide detailed market analyses to help you make informed decisions."
+    question: "Wie schnell kann BeFi einen Auftrag starten?",
+    answer: "Nach einer kostenlosen Bedarfsanalyse können wir oft innerhalb weniger Tage mit der Arbeit beginnen. Bei dringenden Anfragen sind auch kurzfristige Einsätze möglich."
   },
   {
-    question: "Do high-end properties support virtual tours?",
-    answer: "Yes! All our luxury listings include immersive 3D virtual tours, high-resolution photography, and drone footage. This allows you to explore properties from anywhere in the world."
+    question: "Verwendet BeFi umweltfreundliche Reinigungsmittel?",
+    answer: "Ja, wir setzen auf schonende Methoden und umweltfreundliche Produkte wo immer möglich. Nachhaltigkeit ist uns wichtig – für Mensch und Umwelt."
   },
   {
-    question: "How long does the property transfer process take?",
-    answer: "The timeline varies by location and transaction type, but typically takes 30-60 days from accepted offer to closing. We work diligently to ensure a smooth and timely process."
+    question: "Wie erreiche ich BeFi für eine Offerte?",
+    answer: "Rufen Sie uns an unter +41 52 536 69 84 oder schreiben Sie an info@befi-fs.ch. Wir erstellen Ihnen gerne eine kostenlose und unverbindliche Offerte."
   }
 ];
 
@@ -79,13 +79,13 @@ const FAQSection = () => {
         {/* Left Column - Header */}
         <FadeIn direction="right" className="lg:w-1/3">
           <span className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light text-foreground mb-6">
-            Help Center
+            Häufige Fragen
           </span>
           
           <h2 className="text-3xl md:text-4xl font-semibold uppercase tracking-tight text-foreground leading-tight">
-            FREQUENTLY ASKED
+            HÄUFIG GESTELLTE
             <br />
-            QUESTIONS
+            FRAGEN
           </h2>
         </FadeIn>
         

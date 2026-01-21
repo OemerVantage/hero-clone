@@ -8,10 +8,10 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { value: "200", suffix: "+", label: "Projects Complete" },
-  { value: "70", suffix: "+", label: "Happy Clients" },
-  { value: "$10M", suffix: "+", label: "Project Value" },
-  { value: "90", suffix: "%", label: "Client Retention Rate" }
+  { value: "13", suffix: "+", label: "Jahre Erfahrung" },
+  { value: "500", suffix: "+", label: "Zufriedene Kunden" },
+  { value: "1000", suffix: "+", label: "Betreute Objekte" },
+  { value: "98", suffix: "%", label: "Kundenzufriedenheit" }
 ];
 
 const StatItem = ({ value, suffix, label }: Stat) => (
@@ -60,21 +60,21 @@ const WhoWeAreSection = () => {
         {/* Left Column - Text & Stats */}
         <FadeIn direction="right" className="lg:w-2/5">
           <span className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light text-foreground mb-6">
-            Who We Are
+            Über uns
           </span>
           
           <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold uppercase tracking-tight text-foreground leading-tight mb-6">
-            REDEFINING
+            EXZELLENZ IM
             <br />
-            EXCELLENCE IN REAL
+            FACILITY MANAGEMENT
             <br />
-            ESTATE
+            SEIT 2011
           </h2>
           
           <p className="text-lg font-light text-foreground leading-relaxed mb-10">
-            We specialize in luxury properties, sustainable homes, and vacation rentals 
-            — driven by a passion for exceptional living and a commitment to quality, 
-            innovation, and client satisfaction.
+            BeFi Facility Services AG ist ein etabliertes Schweizer Unternehmen mit Sitz in Winterthur. 
+            Unter der Leitung von Fisnik Dauti bieten wir ganzheitliche Lösungen für Gebäudebetreuung 
+            und -pflege – professionell, zuverlässig und kundenorientiert.
           </p>
           
           {/* Stats Grid 2x2 */}
@@ -108,13 +108,13 @@ const WhoWeAreSection = () => {
         >
           <VisionMissionCard 
             icon={Eye}
-            title="Our Vision"
-            description="To be a leader in the real estate market, offering unparalleled services in luxury, sustainability, and vacation properties."
+            title="Unsere Vision"
+            description="Führend im Schweizer Facility Management mit höchsten Qualitätsstandards und nachhaltigen Methoden."
           />
           <VisionMissionCard 
             icon={Target}
-            title="Our Mission"
-            description="To create exceptional living experiences through innovation, sustainability, and personalized service in modern real estate."
+            title="Unsere Mission"
+            description="Erstklassige Gebäudedienstleistungen durch Innovation, Nachhaltigkeit und persönlichen Service für jedes Objekt."
           />
         </StaggerChildren>
       </div>
