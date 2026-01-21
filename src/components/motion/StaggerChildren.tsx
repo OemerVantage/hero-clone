@@ -1,6 +1,5 @@
 import { motion, Variants } from "framer-motion";
 import { ReactNode, Children } from "react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface StaggerChildrenProps {
   children: ReactNode;
@@ -24,11 +23,8 @@ const StaggerChildren = ({
   direction = "up",
   distance = 20,
   triggerOnce = true,
-  threshold = 0.1,
   as = "div"
 }: StaggerChildrenProps) => {
-  const { ref, controls } = useScrollAnimation({ triggerOnce, threshold });
-
   const getDirectionValues = () => {
     switch (direction) {
       case "up": return { y: distance, x: 0 };
@@ -69,9 +65,9 @@ const StaggerChildren = ({
 
   return (
     <MotionComponent
-      ref={ref}
       initial="hidden"
-      animate={controls}
+      whileInView="visible"
+      viewport={{ once: triggerOnce, amount: 0.1 }}
       variants={containerVariants}
       className={className}
     >

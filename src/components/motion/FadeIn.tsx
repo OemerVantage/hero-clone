@@ -1,6 +1,5 @@
 import { motion, Variants } from "framer-motion";
 import { ReactNode } from "react";
-import { useScrollAnimation } from "@/hooks/use-scroll-animation";
 
 interface FadeInProps {
   children: ReactNode;
@@ -21,10 +20,7 @@ const FadeIn = ({
   duration = 0.6,
   distance = 20,
   triggerOnce = true,
-  threshold = 0.1
 }: FadeInProps) => {
-  const { ref, controls } = useScrollAnimation({ triggerOnce, threshold });
-
   const getDirectionValues = () => {
     switch (direction) {
       case "up": return { y: distance, x: 0 };
@@ -53,9 +49,9 @@ const FadeIn = ({
 
   return (
     <motion.div
-      ref={ref}
       initial="hidden"
-      animate={controls}
+      whileInView="visible"
+      viewport={{ once: triggerOnce, amount: 0.1 }}
       variants={variants}
       className={className}
     >
