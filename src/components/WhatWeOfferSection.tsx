@@ -1,6 +1,6 @@
 import { useState } from "react";
 import { motion, AnimatePresence } from "framer-motion";
-import { ChevronUp, ChevronDown } from "lucide-react";
+import { ArrowLeft } from "lucide-react";
 import luxuryResidenceImage from "@/assets/luxury-residence.jpg";
 import vacationHomeImage from "@/assets/vacation-home.jpg";
 import heroCoverImage from "@/assets/hero-cover.jpg";
@@ -64,7 +64,7 @@ const WhatWeOfferSection = () => {
         </div>
 
         {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-8">
+        <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-4">
           {/* Left Info Box - Mobile: below tabs, Desktop: 30% */}
           <div className="order-2 lg:order-1 lg:col-span-3 flex flex-col justify-end lg:h-[450px] xl:h-[500px]">
             <AnimatePresence mode="wait">
@@ -95,8 +95,8 @@ const WhatWeOfferSection = () => {
             </AnimatePresence>
           </div>
 
-          {/* Middle Image - Mobile: first, Desktop: 50% */}
-          <div className="order-1 lg:order-2 lg:col-span-5 relative">
+          {/* Middle Image - Mobile: first, Desktop: 40% */}
+          <div className="order-1 lg:order-2 lg:col-span-4 relative">
             <div className="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.img
@@ -148,58 +148,36 @@ const WhatWeOfferSection = () => {
             </div>
           </div>
 
-          {/* Right Vertical Navigation - Hidden on Mobile, Desktop: 20% */}
-          <div className="hidden lg:flex order-3 lg:col-span-2 flex-row lg:flex-col gap-2 lg:h-[450px] xl:h-[500px]">
-            {services.map((service, index) => {
-              const isActive = activeIndex === index;
-              const canGoUp = index > 0;
-              const canGoDown = index < services.length - 1;
-              
-              return (
-                <button
-                  key={service.id}
-                  onClick={() => setActiveIndex(index)}
-                  className={`flex-1 border-l border-border flex flex-col items-center relative transition-all duration-300 hover:bg-secondary/50 ${
-                    isActive ? 'bg-secondary/30' : ''
-                  }`}
-                >
-                  <div className="p-2">
-                    {canGoUp ? (
-                      <ChevronUp 
-                        className={`w-5 h-5 xl:w-6 xl:h-6 transition-colors ${isActive ? 'text-foreground' : 'text-muted-foreground/60'}`} 
-                      />
-                    ) : (
-                      <div className="w-5 h-5 xl:w-6 xl:h-6" />
-                    )}
-                  </div>
-                  
-                  <div className="flex-1 flex items-center justify-center">
-                    <div className="-rotate-90 whitespace-nowrap flex items-center gap-3 xl:gap-4">
-                      <span className={`text-3xl xl:text-4xl 2xl:text-5xl font-light transition-colors ${
-                        isActive ? 'text-foreground' : 'text-muted-foreground/60'
-                      }`}>
+          {/* Right Vertical Navigation - Hidden on Mobile, Desktop: 30% */}
+          <div className="hidden lg:flex order-3 lg:col-span-3 flex-col lg:h-[450px] xl:h-[500px]">
+            {/* Navigation Arrows at top */}
+            <div className="flex justify-end gap-3 pr-6 mb-3">
+              <ArrowLeft className="w-4 h-4 text-muted-foreground/50" />
+              <ArrowLeft className="w-4 h-4 text-muted-foreground/50" />
+            </div>
+            
+            {/* Only show INACTIVE tabs */}
+            <div className="flex-1 flex">
+              {services
+                .map((service, originalIndex) => ({ service, originalIndex }))
+                .filter(({ originalIndex }) => originalIndex !== activeIndex)
+                .map(({ service, originalIndex }) => (
+                  <button
+                    key={service.id}
+                    onClick={() => setActiveIndex(originalIndex)}
+                    className="flex-1 flex items-center justify-center border-l border-border/50 hover:bg-secondary/20 transition-colors"
+                  >
+                    <div className="-rotate-90 whitespace-nowrap flex items-center gap-3">
+                      <span className="text-5xl xl:text-6xl font-light text-muted-foreground/30">
                         {service.id}
                       </span>
-                      <span className={`text-lg xl:text-xl 2xl:text-2xl font-semibold uppercase tracking-wide transition-colors ${
-                        isActive ? 'text-foreground' : 'text-muted-foreground/60'
-                      }`}>
+                      <span className="text-sm xl:text-base font-semibold uppercase tracking-wider text-muted-foreground/50">
                         {service.title}
                       </span>
                     </div>
-                  </div>
-                  
-                  <div className="p-2">
-                    {canGoDown ? (
-                      <ChevronDown 
-                        className={`w-5 h-5 xl:w-6 xl:h-6 transition-colors ${isActive ? 'text-foreground' : 'text-muted-foreground/60'}`} 
-                      />
-                    ) : (
-                      <div className="w-5 h-5 xl:w-6 xl:h-6" />
-                    )}
-                  </div>
-                </button>
-              );
-            })}
+                  </button>
+                ))}
+            </div>
           </div>
         </div>
       </div>
