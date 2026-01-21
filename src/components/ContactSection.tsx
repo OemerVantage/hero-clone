@@ -36,7 +36,7 @@ const ContactSection = () => {
   };
 
   return (
-    <section className="relative min-h-screen flex items-start justify-center pt-16 md:pt-24 pb-16">
+    <section className="relative min-h-screen flex items-start justify-center pt-12 md:pt-16 lg:pt-24 pb-12 md:pb-16">
       
       {/* Background Image */}
       <div 
@@ -47,19 +47,19 @@ const ContactSection = () => {
       />
       
       {/* Content Container */}
-      <div className="relative z-10 w-full px-6 md:px-12 lg:px-20 flex flex-col items-center">
+      <div className="relative z-10 w-full max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20 flex flex-col items-center">
         
         {/* Header */}
-        <FadeIn direction="up" className="text-center max-w-2xl mb-12">
-          <span className="inline-flex items-center px-6 py-2 bg-secondary border border-border rounded-full text-lg font-light text-foreground mb-6">
+        <FadeIn direction="up" className="text-center max-w-2xl mb-8 md:mb-12">
+          <span className="inline-flex items-center px-4 md:px-6 py-2 bg-secondary border border-border rounded-full text-base md:text-lg font-light text-foreground mb-4 md:mb-6">
             Kontakt
           </span>
           
-          <h2 className="text-3xl md:text-4xl lg:text-5xl font-semibold uppercase tracking-tight text-foreground leading-tight mb-6">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-semibold uppercase tracking-tight text-foreground leading-tight mb-4 md:mb-6">
             LASSEN SIE UNS ÜBER IHRE ANFORDERUNGEN SPRECHEN
           </h2>
           
-          <p className="text-lg font-light text-foreground leading-relaxed">
+          <p className="text-base md:text-lg font-light text-foreground leading-relaxed">
             Haben Sie Fragen oder möchten Sie eine unverbindliche Offerte? 
             Unser Team in Winterthur berät Sie gerne persönlich. 
             Wir freuen uns auf Ihre Nachricht!
@@ -68,7 +68,7 @@ const ContactSection = () => {
         
         {/* Form Card */}
         <FadeIn direction="up" delay={0.2} className="w-full max-w-xl">
-          <form onSubmit={handleSubmit} className="bg-white rounded-[24px] p-8 shadow-lg">
+          <form onSubmit={handleSubmit} className="bg-white rounded-[20px] md:rounded-[24px] p-6 md:p-8 shadow-lg">
             
             {/* Row 1: First Name / Last Name */}
             <div className="grid grid-cols-1 md:grid-cols-2 gap-4 mb-4">
