@@ -36,7 +36,7 @@ const UeberUns = () => {
 
       {/* Hero Section */}
       <section className="px-4 md:px-6 pb-6">
-        <div className="relative w-full h-[350px] sm:h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden">
+        <div className="relative w-full h-[280px] sm:h-[320px] md:h-[350px] lg:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden">
           {/* Background Image */}
           <img
             src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80"
