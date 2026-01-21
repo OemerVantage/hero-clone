@@ -59,7 +59,7 @@ const Dienstleistungen = () => {
       
       {/* Hero Section - Like HeroSection.tsx */}
       <section className="px-4 md:px-6 pb-6">
-        <div className="relative w-full h-[calc(100vh-100px)] min-h-[600px] rounded-2xl md:rounded-3xl overflow-hidden">
+        <div className="relative w-full h-[400px] md:h-[450px] lg:h-[500px] rounded-2xl md:rounded-3xl overflow-hidden">
           {/* Background Image */}
           <img
             src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80"
@@ -77,19 +77,18 @@ const Dienstleistungen = () => {
           />
 
           {/* Content */}
-          <div className="relative h-full flex flex-col justify-between p-8 md:p-12 lg:p-16">
+          <div className="relative h-full flex flex-col justify-end p-6 md:p-8 lg:p-10">
             {/* Main Content */}
-            <div className="flex-1 flex flex-col justify-center max-w-xl">
-              <h1 className="text-4xl md:text-5xl lg:text-6xl font-semibold text-white leading-[1.1] tracking-tight mb-6">
+            <div className="max-w-xl">
+              <h1 className="text-3xl md:text-4xl lg:text-5xl font-semibold text-white leading-[1.1] tracking-tight mb-4">
                 UNSERE
                 <br />
                 DIENSTLEISTUNGEN
               </h1>
 
-              <p className="text-white/70 text-sm md:text-base leading-relaxed mb-8 max-w-md">
+              <p className="text-white/70 text-sm md:text-base leading-relaxed mb-6 max-w-md">
                 Von der klassischen Reinigung bis zu spezialisierten Facility Management-Services – 
-                wir bieten ganzheitliche Lösungen für Ihre Immobilie. Qualität, Zuverlässigkeit und 
-                persönlicher Service stehen bei uns an erster Stelle.
+                wir bieten ganzheitliche Lösungen für Ihre Immobilie.
               </p>
 
               <Link to="/#contact" className="btn-explore w-fit">
@@ -98,19 +97,6 @@ const Dienstleistungen = () => {
                   <ArrowUpRight className="w-4 h-4 text-white" />
                 </span>
               </Link>
-            </div>
-
-            {/* Stats */}
-            <div className="flex gap-8 md:gap-12 mt-8">
-              {heroStats.map((stat, index) => (
-                <div key={index} className="flex flex-col">
-                  <span className="stat-number">
-                    {stat.number}
-                    {stat.suffix && <sup className="text-lg md:text-xl align-super">{stat.suffix}</sup>}
-                  </span>
-                  <span className="stat-label">{stat.label}</span>
-                </div>
-              ))}
             </div>
           </div>
         </div>
