@@ -1,6 +1,5 @@
 import { useInView } from "react-intersection-observer";
-import { useAnimation } from "framer-motion";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 interface UseScrollAnimationOptions {
   threshold?: number;
@@ -10,7 +9,7 @@ interface UseScrollAnimationOptions {
 
 interface UseScrollAnimationReturn {
   ref: (node?: Element | null) => void;
-  controls: ReturnType<typeof useAnimation>;
+  controls: "visible" | "hidden";
   inView: boolean;
 }
 
@@ -23,7 +22,7 @@ export const useScrollAnimation = (
     rootMargin = "0px"
   } = options;
 
-  const controls = useAnimation();
+  const [controls, setControls] = useState<"visible" | "hidden">("hidden");
   const { ref, inView } = useInView({
     threshold,
     triggerOnce,
@@ -32,11 +31,11 @@ export const useScrollAnimation = (
 
   useEffect(() => {
     if (inView) {
-      controls.start("visible");
+      setControls("visible");
     } else if (!triggerOnce) {
-      controls.start("hidden");
+      setControls("hidden");
     }
-  }, [controls, inView, triggerOnce]);
+  }, [inView, triggerOnce]);
 
   return { ref, controls, inView };
 };
