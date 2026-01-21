@@ -14,6 +14,7 @@ import UeberUnsTeam from "./pages/UeberUnsTeam";
 import Referenzen from "./pages/Referenzen";
 import Kontakt from "./pages/Kontakt";
 import Karriere from "./pages/Karriere";
+import BefiSoft from "./pages/BefiSoft";
 import NotFound from "./pages/NotFound";
 
 const queryClient = new QueryClient();
@@ -36,6 +37,7 @@ const App = () => (
           <Route path="/referenzen" element={<Referenzen />} />
           <Route path="/kontakt" element={<Kontakt />} />
           <Route path="/karriere" element={<Karriere />} />
+          <Route path="/befi-soft" element={<BefiSoft />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
         </Routes>

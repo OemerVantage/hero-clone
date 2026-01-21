@@ -10,6 +10,7 @@ const Header = () => {
     { label: "Home", path: "/" },
     { label: "Dienstleistungen", path: "/dienstleistungen" },
     { label: "Über uns", path: "/ueber-uns" },
+    { label: "BeFi Soft", path: "/befi-soft" },
     { label: "Karriere", path: "/karriere" },
     { label: "Referenzen", path: "/referenzen" },
     { label: "Kontakt", path: "/kontakt" }
