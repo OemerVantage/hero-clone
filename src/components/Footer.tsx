@@ -29,7 +29,7 @@ const Footer = () => {
             </div>
             <p className="text-background/70 text-sm leading-relaxed">
               Ihr Partner für professionelles Facility Management in der Region Winterthur. 
-              Qualität, Zuverlässigkeit und Kundenzufriedenheit seit über 13 Jahren.
+              Qualität, Zuverlässigkeit und Kundenzufriedenheit seit über 15 Jahren.
             </p>
           </div>
 

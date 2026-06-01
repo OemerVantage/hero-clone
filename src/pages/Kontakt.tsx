@@ -167,7 +167,7 @@ const Kontakt = () => {
       <section className="px-4 md:px-6 pb-6">
         <div className="relative w-full h-[280px] sm:h-[320px] md:h-[350px] lg:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1423666639041-f56000c27a9a?w=1920&h=800&fit=crop"
+            src="/images/fassade-hgc.jpg"
             alt="Kontaktieren Sie BeFi"
             className="absolute inset-0 w-full h-full object-cover"
           />

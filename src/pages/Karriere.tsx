@@ -128,7 +128,7 @@ const Karriere = () => {
         <div className="relative w-full h-[280px] sm:h-[320px] md:h-[350px] lg:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden">
           {/* Background Image */}
           <img
-            src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?w=1920&q=80"
+            src="/images/team-anerkennung.jpg"
             alt="BeFi Karriere"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -173,7 +173,7 @@ const Karriere = () => {
             <FadeIn direction="right" className="w-full lg:w-[45%]">
               <div className="rounded-[24px] md:rounded-[32px] overflow-hidden">
                 <img
-                  src="https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80"
+                  src="/images/treppenreinigung.jpg"
                   alt="BeFi Team Kultur"
                   className="w-full h-auto object-cover aspect-[4/3]"
                 />

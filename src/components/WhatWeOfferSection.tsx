@@ -1,184 +1,113 @@
-import { useState } from "react";
-import { motion, AnimatePresence } from "framer-motion";
-import { ArrowLeft } from "lucide-react";
-import luxuryResidenceImage from "@/assets/luxury-residence.jpg";
-import vacationHomeImage from "@/assets/vacation-home.jpg";
-import heroCoverImage from "@/assets/hero-cover.jpg";
+import { motion } from "framer-motion";
+import { ArrowUpRight } from "lucide-react";
 
 const services = [
   {
     id: "01",
     title: "Reinigung & Unterhalt",
-    description: "Professionelle Reinigungsarbeiten für Wohnungen, Büros und Industrieräume. Von der Unterhaltsreinigung bis zur Spezialreinigung – wir sorgen für makellose Sauberkeit.",
-    image: luxuryResidenceImage,
+    description:
+      "Professionelle Reinigungsarbeiten für Wohnungen, Büros und Industrieräume. Von der Unterhaltsreinigung bis zur Spezialreinigung – wir sorgen für makellose Sauberkeit.",
+    image: "/images/treppenreinigung.jpg",
+    features: ["Unterhaltsreinigung", "Spezialreinigung", "Bauendreinigung"],
   },
   {
     id: "02",
     title: "Hauswartung & Technik",
-    description: "Laufende Betreuung und Pflege von Immobilien – technisch und organisatorisch. Wir sorgen für Funktionalität, Sicherheit und Werterhalt Ihrer Liegenschaft.",
-    image: vacationHomeImage,
+    description:
+      "Laufende Betreuung und Pflege von Immobilien – technisch und organisatorisch. Wir sorgen für Funktionalität, Sicherheit und Werterhalt Ihrer Liegenschaft.",
+    image: "/images/hauswartung-technik.jpg",
+    features: ["Technische Wartung", "Hauswartdienste", "Winterdienst"],
   },
   {
     id: "03",
     title: "Garten & Aussenanlagen",
-    description: "Gartenpflege und Grünflächenbetreuung für gepflegte und einladende Aussenbereiche. Das ganze Jahr über kümmern wir uns um Ihre Grünanlagen.",
-    image: heroCoverImage,
+    description:
+      "Gartenpflege und Grünflächenbetreuung für gepflegte und einladende Aussenbereiche. Das ganze Jahr über kümmern wir uns um Ihre Grünanlagen.",
+    image: "/images/garten-rasenmaehen.jpg",
+    features: ["Gartenpflege", "Grünflächen", "Pflanzenpflege"],
   },
 ];
 
 const WhatWeOfferSection = () => {
-  const [activeIndex, setActiveIndex] = useState(0);
-  const activeService = services[activeIndex];
-
   return (
-    <section className="bg-background py-12 md:py-16 lg:py-24">
+    <section className="bg-background py-16 md:py-24 lg:py-32">
       <div className="max-w-[1600px] mx-auto px-4 sm:px-6 md:px-12 lg:px-20">
         {/* Header */}
-        <div className="mb-8 md:mb-12">
-          <span className="inline-flex items-center px-4 md:px-6 py-2 bg-secondary border border-border rounded-full text-base md:text-lg font-light text-foreground mb-4 md:mb-6">
-            Unsere Leistungen
-          </span>
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold uppercase tracking-tight text-foreground mb-3 md:mb-4 leading-tight">
-            UMFASSENDE FACILITY SERVICES
-          </h2>
-          <p className="text-base md:text-lg font-light text-foreground leading-relaxed max-w-[727px]">
-            Unsere Dienstleistungen umfassen professionelle Reinigung, technische Hauswartung und Grünflächenpflege – alles aus einer Hand.
+        <div className="flex flex-col lg:flex-row lg:items-end lg:justify-between gap-6 mb-12 md:mb-16">
+          <div className="max-w-2xl">
+            <span className="inline-flex items-center px-4 py-1.5 bg-secondary border border-border rounded-full text-xs md:text-sm font-medium uppercase tracking-wider text-foreground mb-5">
+              Unsere Leistungen
+            </span>
+            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-semibold tracking-tight text-foreground leading-[1.05]">
+              Umfassende
+              <br />
+              <span className="text-muted-foreground">Facility Services.</span>
+            </h2>
+          </div>
+          <p className="text-base md:text-lg font-light text-muted-foreground leading-relaxed max-w-md">
+            Professionelle Reinigung, technische Hauswartung und
+            Grünflächenpflege – alles aus einer Hand.
           </p>
         </div>
 
-        {/* Mobile Tabs */}
-        <div className="lg:hidden flex gap-2 overflow-x-auto pb-4 -mx-4 px-4 scrollbar-hide">
+        {/* Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 md:gap-6">
           {services.map((service, index) => (
-            <button
+            <motion.article
               key={service.id}
-              onClick={() => setActiveIndex(index)}
-              className={`flex-shrink-0 px-4 py-2 rounded-full text-sm font-medium whitespace-nowrap transition-colors ${
-                activeIndex === index
-                  ? 'bg-foreground text-background'
-                  : 'bg-secondary text-foreground hover:bg-secondary/80'
-              }`}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              viewport={{ once: true, margin: "-50px" }}
+              transition={{ duration: 0.5, delay: index * 0.1 }}
+              className="group relative flex flex-col bg-secondary/30 rounded-2xl md:rounded-3xl overflow-hidden border border-border/50 hover:border-border transition-all duration-500 hover:shadow-xl hover:-translate-y-1"
             >
-              {service.title}
-            </button>
-          ))}
-        </div>
-
-        {/* Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-10 gap-6 lg:gap-4">
-          {/* Left Info Box - Mobile: below tabs, Desktop: 30% */}
-          <div className="order-2 lg:order-1 lg:col-span-3 flex flex-col justify-end lg:h-[450px] xl:h-[500px]">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeIndex}
-                initial={{ opacity: 0, y: 20 }}
-                animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -20 }}
-                transition={{ duration: 0.3 }}
-              >
-                {/* Icon */}
-                <div className="w-10 h-10 md:w-12 md:h-12 mb-3 md:mb-4">
-                  <svg viewBox="0 0 48 48" className="w-full h-full text-foreground" fill="none" stroke="currentColor" strokeWidth="1.5">
-                    <path d="M24 8L24 40M16 16L24 8L32 16" />
-                    <path d="M12 28C12 28 16 24 24 24C32 24 36 28 36 28" />
-                    <circle cx="24" cy="36" r="4" />
-                  </svg>
-                </div>
-                
-                <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3 md:mb-4">
-                  {activeService.title}
-                </h3>
-                
-                <p className="text-base md:text-lg font-light text-foreground leading-relaxed max-w-[388px]">
-                  {activeService.description}
-                </p>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Middle Image - Mobile: first, Desktop: 40% */}
-          <div className="order-1 lg:order-2 lg:col-span-4 relative">
-            <div className="relative h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] xl:h-[500px] rounded-[24px] md:rounded-[32px] overflow-hidden">
-              <AnimatePresence mode="wait">
-                <motion.img
-                  key={activeIndex}
-                  src={activeService.image}
-                  alt={activeService.title}
-                  className="w-full h-full object-cover"
-                  initial={{ opacity: 0, scale: 1.05 }}
-                  animate={{ opacity: 1, scale: 1 }}
-                  exit={{ opacity: 0, scale: 0.95 }}
-                  transition={{ duration: 0.4 }}
+              {/* Image */}
+              <div className="relative aspect-[4/3] overflow-hidden">
+                <img
+                  src={service.image}
+                  alt={service.title}
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
-              </AnimatePresence>
-              
-              {/* Corner Curve Overlay */}
-              <div className="absolute bottom-0 right-0">
-                {/* Top corner curve */}
-                <svg 
-                  className="absolute -top-8 md:-top-10 right-0 w-8 h-8 md:w-10 md:h-10" 
-                  viewBox="0 0 40 40"
-                >
-                  <path d="M40 0 L40 40 L0 40 Q40 40 40 0" fill="hsl(var(--background))" />
-                </svg>
-                
-                {/* Left corner curve */}
-                <svg 
-                  className="absolute top-0 -left-8 md:-left-10 w-8 h-8 md:w-10 md:h-10" 
-                  viewBox="0 0 40 40"
-                >
-                  <path d="M0 40 L40 40 L40 0 Q40 40 0 40" fill="hsl(var(--background))" />
-                </svg>
-                
-                {/* Text Badge */}
-                <div className="bg-background rounded-tl-[24px] md:rounded-tl-[32px] px-4 md:px-6 py-4 md:py-5 min-w-[140px] md:min-w-[187px]">
-                  <AnimatePresence mode="wait">
-                    <motion.div
-                      key={activeIndex}
-                      initial={{ opacity: 0 }}
-                      animate={{ opacity: 1 }}
-                      exit={{ opacity: 0 }}
-                      transition={{ duration: 0.2 }}
-                    >
-                      <span className="text-3xl md:text-5xl font-light text-foreground block">{activeService.id}</span>
-                      <p className="text-base md:text-lg font-semibold text-foreground">{activeService.title}</p>
-                    </motion.div>
-                  </AnimatePresence>
+                <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent" />
+
+                {/* Number Badge */}
+                <div className="absolute top-4 left-4 md:top-5 md:left-5">
+                  <span className="inline-flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-full bg-background/95 backdrop-blur-sm text-sm md:text-base font-semibold text-foreground">
+                    {service.id}
+                  </span>
+                </div>
+
+                {/* Arrow Button */}
+                <div className="absolute top-4 right-4 md:top-5 md:right-5 opacity-0 group-hover:opacity-100 transition-all duration-300 translate-y-1 group-hover:translate-y-0">
+                  <span className="inline-flex items-center justify-center w-11 h-11 md:w-12 md:h-12 rounded-full bg-primary text-white">
+                    <ArrowUpRight className="w-5 h-5" />
+                  </span>
                 </div>
               </div>
-            </div>
-          </div>
 
-          {/* Right Vertical Navigation - Hidden on Mobile, Desktop: 30% */}
-          <div className="hidden lg:flex order-3 lg:col-span-3 flex-col lg:h-[450px] xl:h-[500px]">
-            {/* Navigation Arrows at top */}
-            <div className="flex justify-end gap-3 pr-6 mb-3">
-              <ArrowLeft className="w-4 h-4 text-muted-foreground/50" />
-              <ArrowLeft className="w-4 h-4 text-muted-foreground/50" />
-            </div>
-            
-            {/* Only show INACTIVE tabs */}
-            <div className="flex-1 flex">
-              {services
-                .map((service, originalIndex) => ({ service, originalIndex }))
-                .filter(({ originalIndex }) => originalIndex !== activeIndex)
-                .map(({ service, originalIndex }) => (
-                  <button
-                    key={service.id}
-                    onClick={() => setActiveIndex(originalIndex)}
-                    className="flex-1 flex items-center justify-center border-l border-border/50 hover:bg-secondary/20 transition-colors"
-                  >
-                    <div className="-rotate-90 whitespace-nowrap flex items-center gap-3">
-                      <span className="text-5xl xl:text-6xl font-light text-muted-foreground/30">
-                        {service.id}
-                      </span>
-                      <span className="text-sm xl:text-base font-semibold uppercase tracking-wider text-muted-foreground/50">
-                        {service.title}
-                      </span>
-                    </div>
-                  </button>
-                ))}
-            </div>
-          </div>
+              {/* Content */}
+              <div className="flex flex-col flex-1 p-6 md:p-7 lg:p-8">
+                <h3 className="text-xl md:text-2xl font-semibold text-foreground mb-3">
+                  {service.title}
+                </h3>
+                <p className="text-sm md:text-base font-light text-muted-foreground leading-relaxed mb-6 flex-1">
+                  {service.description}
+                </p>
+
+                {/* Features list */}
+                <ul className="flex flex-wrap gap-2 pt-5 border-t border-border/60">
+                  {service.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="text-xs md:text-sm px-3 py-1 rounded-full bg-background text-foreground/80 border border-border/60"
+                    >
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            </motion.article>
+          ))}
         </div>
       </div>
     </section>

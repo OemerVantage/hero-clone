@@ -23,7 +23,7 @@ const projects: Project[] = [
     location: "Winterthur",
     category: "gewerbe",
     service: "Büroreinigung",
-    image: "https://images.unsplash.com/photo-1497366216548-37526070297c?w=600&h=450&fit=crop"
+    image: "/images/gewerbe-reinigung.jpg"
   },
   {
     id: 2,
@@ -31,7 +31,7 @@ const projects: Project[] = [
     location: "Zürich",
     category: "industrie",
     service: "Industriereinigung",
-    image: "https://images.unsplash.com/photo-1565793298595-6a879b1d9492?w=600&h=450&fit=crop"
+    image: "/images/fenster-reinigung.jpg"
   },
   {
     id: 3,
@@ -39,7 +39,7 @@ const projects: Project[] = [
     location: "Kloten",
     category: "hauswartung",
     service: "Hauswartung",
-    image: "https://images.unsplash.com/photo-1545324418-cc1a3fa10c00?w=600&h=450&fit=crop"
+    image: "/images/garten-rasenmaehen.jpg"
   },
   {
     id: 4,
@@ -47,7 +47,7 @@ const projects: Project[] = [
     location: "Winterthur",
     category: "privat",
     service: "Umzugsreinigung",
-    image: "https://images.unsplash.com/photo-1600585154340-be6161a56a0c?w=600&h=450&fit=crop"
+    image: "/images/hauswartung-technik.jpg"
   },
   {
     id: 5,
@@ -55,7 +55,7 @@ const projects: Project[] = [
     location: "Zürich-Flughafen",
     category: "industrie",
     service: "Industriereinigung",
-    image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=450&fit=crop"
+    image: "/images/treppenreinigung.jpg"
   },
   {
     id: 6,
@@ -63,7 +63,7 @@ const projects: Project[] = [
     location: "Winterthur",
     category: "gewerbe",
     service: "Praxisreinigung",
-    image: "https://images.unsplash.com/photo-1629909613654-28e377c37b09?w=600&h=450&fit=crop"
+    image: "/images/spezialreinigung-wc.jpg"
   },
   {
     id: 7,
@@ -71,7 +71,7 @@ const projects: Project[] = [
     location: "Effretikon",
     category: "hauswartung",
     service: "Hauswartung & Gartenpflege",
-    image: "https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?w=600&h=450&fit=crop"
+    image: "/images/garten-heckenschnitt.jpg"
   },
   {
     id: 8,
@@ -79,7 +79,7 @@ const projects: Project[] = [
     location: "Zürich",
     category: "privat",
     service: "Fensterreinigung",
-    image: "https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?w=600&h=450&fit=crop"
+    image: "/images/fenster-innen.jpg"
   },
   {
     id: 9,
@@ -87,14 +87,14 @@ const projects: Project[] = [
     location: "Winterthur",
     category: "gewerbe",
     service: "Fassadenreinigung",
-    image: "https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?w=600&h=450&fit=crop"
+    image: "/images/fassade-hgc.jpg"
   }
 ];
 
 const stats = [
   { number: "500+", label: "Zufriedene Kunden" },
   { number: "1000+", label: "Betreute Objekte" },
-  { number: "13+", label: "Jahre Erfahrung" },
+  { number: "15+", label: "Jahre Erfahrung" },
   { number: "98%", label: "Zufriedenheit" }
 ];
 
@@ -164,7 +164,7 @@ const Referenzen = () => {
       <section className="px-4 md:px-6 pb-6">
         <div className="relative w-full h-[280px] sm:h-[320px] md:h-[350px] lg:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1497366216548-37526070297c?w=1920&h=800&fit=crop"
+            src="/images/gewerbe-reinigung.jpg"
             alt="BeFi Referenzen"
             className="absolute inset-0 w-full h-full object-cover"
           />
