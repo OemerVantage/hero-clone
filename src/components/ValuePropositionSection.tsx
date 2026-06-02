@@ -79,14 +79,6 @@ const ValuePropositionSection = () => {
               transition={{ duration: 0.5, delay: index * 0.08 }}
               className="group relative flex flex-col bg-secondary/40 border border-border/60 rounded-2xl md:rounded-3xl p-6 md:p-7 lg:p-8 overflow-hidden hover:border-foreground/20 hover:shadow-md transition-all duration-500"
             >
-              {/* Highlight watermark */}
-              <span
-                aria-hidden
-                className="absolute -top-1 -right-1 text-[80px] md:text-[100px] font-semibold text-foreground/[0.04] leading-none pointer-events-none select-none whitespace-nowrap"
-              >
-                {value.highlight}
-              </span>
-
               {/* Icon */}
               <div className="relative mb-12 md:mb-16">
                 <span className="inline-flex items-center justify-center w-12 h-12 rounded-full bg-background border border-border text-foreground group-hover:bg-foreground group-hover:text-background group-hover:border-foreground transition-all duration-300">
