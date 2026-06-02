@@ -1,9 +1,8 @@
 import { ArrowUpRight } from "lucide-react";
-import heroCover from "@/assets/hero-cover.jpg";
 
 const HeroSection = () => {
   const stats = [
-    { number: "13", suffix: "+", label: "Jahre Erfahrung" },
+    { number: "15", suffix: "+", label: "Jahre Erfahrung" },
     { number: "500", suffix: "+", label: "Zufriedene Kunden" },
     { number: "1000", suffix: "+", label: "Betreute Objekte" },
   ];
@@ -13,7 +12,7 @@ const HeroSection = () => {
       <div className="relative w-full h-[calc(100vh-100px)] min-h-[600px] rounded-2xl md:rounded-3xl overflow-hidden">
         {/* Background Image */}
         <img
-          src={heroCover}
+          src="/images/gewerbe-reinigung.jpg"
           alt="Professionelles Facility Management Team bei der Arbeit"
           className="absolute inset-0 w-full h-full object-cover"
         />

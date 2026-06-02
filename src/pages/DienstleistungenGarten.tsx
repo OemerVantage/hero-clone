@@ -55,7 +55,7 @@ const DienstleistungenGarten = () => {
       <section className="px-4 md:px-6 pb-6">
         <div className="relative w-full h-[280px] sm:h-[320px] md:h-[350px] lg:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden">
           <img
-            src="https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=1920&q=80"
+            src="/images/garten-heckenschnitt.jpg"
             alt="Gartenpflege und Aussenanlagen"
             className="absolute inset-0 w-full h-full object-cover"
           />

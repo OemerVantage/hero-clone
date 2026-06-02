@@ -7,7 +7,7 @@ import { ArrowUpRight, Building, Users } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const companyStats = [
-  { number: "13", suffix: "+", label: "Jahre Erfahrung" },
+  { number: "15", suffix: "+", label: "Jahre Erfahrung" },
   { number: "500", suffix: "+", label: "Zufriedene Kunden" },
   { number: "1000", suffix: "+", label: "Betreute Objekte" },
 ];
@@ -17,14 +17,14 @@ const subPages = [
     icon: <Building className="w-6 h-6 text-foreground" />,
     title: "Unternehmen & Geschichte",
     description: "Entdecken Sie unsere Meilensteine, Vision und Mission – von der Gründung bis heute.",
-    image: "https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=800&q=80",
+    image: "/images/fassade-glas.jpg",
     link: "/ueber-uns/unternehmen"
   },
   {
     icon: <Users className="w-6 h-6 text-foreground" />,
     title: "Unser Team",
     description: "Lernen Sie die Menschen kennen, die täglich für Ihre Zufriedenheit arbeiten.",
-    image: "https://images.unsplash.com/photo-1522071820081-009f0129c71c?w=800&q=80",
+    image: "/images/fassade-hgc.jpg",
     link: "/ueber-uns/team"
   }
 ];
@@ -39,7 +39,7 @@ const UeberUns = () => {
         <div className="relative w-full h-[280px] sm:h-[320px] md:h-[350px] lg:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden">
           {/* Background Image */}
           <img
-            src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=1920&q=80"
+            src="/images/team-anerkennung.jpg"
             alt="BeFi Facility Services Team"
             className="absolute inset-0 w-full h-full object-cover"
           />

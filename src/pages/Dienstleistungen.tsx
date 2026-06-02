@@ -17,19 +17,19 @@ const serviceAreas = [
     title: "Reinigung & Unterhalt",
     slug: "reinigung",
     description: "Professionelle Reinigungsarbeiten für Wohnungen, Büros, Industrie- und Gewerberäume. Wir sorgen für makellose Sauberkeit mit modernsten Techniken und umweltfreundlichen Mitteln.",
-    image: "https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=800&q=80"
+    image: "/images/kueche-reinigung.jpg"
   },
   {
     title: "Hauswartung & Technischer Service",
     slug: "hauswartung",
     description: "Laufende Betreuung und Pflege von Immobilien – technisch und organisatorisch. Wir sorgen für Funktionalität, Sicherheit und Werterhalt Ihrer Liegenschaft.",
-    image: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?w=800&q=80"
+    image: "/images/hauswartung-technik.jpg"
   },
   {
     title: "Garten & Aussenanlagen",
     slug: "garten",
     description: "Gartenpflege und Grünflächenbetreuung für gepflegte und einladende Aussenbereiche. Das ganze Jahr über kümmern wir uns um Ihre Grünanlagen.",
-    image: "https://images.unsplash.com/photo-1416879595882-3373a0480b5b?w=800&q=80"
+    image: "/images/garten-rasenmaehen.jpg"
   }
 ];
 
@@ -66,7 +66,7 @@ const Dienstleistungen = () => {
         <div className="relative w-full h-[280px] sm:h-[320px] md:h-[350px] lg:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden">
           {/* Background Image */}
           <img
-            src="https://images.unsplash.com/photo-1581578731548-c64695cc6952?w=1920&q=80"
+            src="/images/kueche-reinigung.jpg"
             alt="Professionelle Reinigung und Facility Services"
             className="absolute inset-0 w-full h-full object-cover"
           />

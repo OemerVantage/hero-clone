@@ -8,7 +8,7 @@ interface Stat {
 }
 
 const stats: Stat[] = [
-  { value: "13", suffix: "+", label: "Jahre Erfahrung" },
+  { value: "15", suffix: "+", label: "Jahre Erfahrung" },
   { value: "500", suffix: "+", label: "Zufriedene Kunden" },
   { value: "1000", suffix: "+", label: "Betreute Objekte" },
   { value: "98", suffix: "%", label: "Kundenzufriedenheit" }
@@ -51,7 +51,7 @@ const VisionMissionCard = ({ icon: Icon, title, description }: VisionMissionCard
 );
 
 const WhoWeAreSection = () => {
-  const teamImage = "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&h=600&fit=crop";
+  const teamImage = "/images/team-anerkennung.jpg";
 
   return (
     <section className="bg-background py-12 md:py-16 lg:py-24">

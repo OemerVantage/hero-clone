@@ -7,7 +7,7 @@ import { Eye, Target, ArrowUpRight } from "lucide-react";
 import { Link } from "react-router-dom";
 
 const companyStats = [
-  { number: "13", suffix: "+", label: "Jahre Erfahrung" },
+  { number: "15", suffix: "+", label: "Jahre Erfahrung" },
   { number: "500", suffix: "+", label: "Zufriedene Kunden" },
   { number: "1000", suffix: "+", label: "Betreute Objekte" },
 ];
@@ -50,7 +50,7 @@ const UeberUnsUnternehmen = () => {
         <div className="relative w-full h-[280px] sm:h-[320px] md:h-[350px] lg:h-[400px] rounded-2xl md:rounded-3xl overflow-hidden">
           {/* Background Image */}
           <img
-            src="https://images.unsplash.com/photo-1560179707-f14e90ef3623?w=1920&q=80"
+            src="/images/fassade-hgc.jpg"
             alt="BeFi Firmengebäude"
             className="absolute inset-0 w-full h-full object-cover"
           />
@@ -92,7 +92,7 @@ const UeberUnsUnternehmen = () => {
               <div className="w-full lg:w-[45%] flex justify-center">
                 <div className="rounded-[20px] md:rounded-[24px] overflow-hidden max-w-[500px] w-full">
                   <img
-                    src="https://images.unsplash.com/photo-1600880292203-757bb62b4baf?w=800&q=80"
+                    src="/images/team-anerkennung.jpg"
                     alt="BeFi Team bei der Arbeit"
                     className="w-full h-auto object-cover aspect-[4/3]"
                   />
