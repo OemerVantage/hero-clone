@@ -41,6 +41,11 @@ const Header = () => {
     { label: "Kontakt", path: "/kontakt" },
   ];
 
+  // Shared geometry so every nav item has identical box padding/border —
+  // keeps the spacing between all items visually equal.
+  const navItemClass =
+    "nav-link inline-flex items-center px-3 py-1.5 rounded-full border border-transparent transition-colors";
+
   const hauswartung = getServicesByCategory("hauswartung");
   const reinigung = getServicesByCategory("reinigung");
 
@@ -65,8 +70,8 @@ const Header = () => {
       </Link>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center gap-6 lg:gap-8">
-        <Link to="/" className="nav-link">Home</Link>
+      <nav className="hidden md:flex items-center gap-1 lg:gap-2">
+        <Link to="/" className={navItemClass}>Home</Link>
 
         {/* Dienstleistungen with Mega Menu */}
         <div
@@ -202,7 +207,7 @@ const Header = () => {
         {navLinks
           .filter((l) => l.label !== "Home" && l.label !== "Kontakt")
           .map((link) => (
-            <Link key={link.label} to={link.path} className="nav-link">
+            <Link key={link.label} to={link.path} className={navItemClass}>
               {link.label}
             </Link>
           ))}

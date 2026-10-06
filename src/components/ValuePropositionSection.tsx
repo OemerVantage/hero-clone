@@ -95,15 +95,6 @@ const ValuePropositionSection = () => {
                   {value.description}
                 </p>
               </div>
-
-              {/* Bottom progress line (decorative) */}
-              <div className="relative mt-6 pt-5 border-t border-border/60">
-                <div className="flex items-center gap-2 text-[11px] uppercase tracking-wider font-medium text-foreground/60">
-                  <span className="tabular-nums">{String(index + 1).padStart(2, "0")}</span>
-                  <span className="flex-1 h-px bg-border" />
-                  <span>{value.highlight}</span>
-                </div>
-              </div>
             </motion.article>
           ))}
         </div>
