@@ -1,9 +1,11 @@
+/* Font imports must precede all other statements (CSS @import rule). */
+@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Geist+Mono:wght@400;500&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-@import url('https://fonts.googleapis.com/css2?family=Geist:wght@300;400;500;600;700&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 
 @layer base {
   :root {
@@ -182,4 +184,53 @@
     margin-left: auto;
     margin-right: auto;
   }
+}
+
+/* ============================================================
+   BeFi v2 — Petrol design system tokens
+   Additive on purpose: the legacy tokens above are untouched, so the
+   existing site keeps its look. The /v2 pages consume these via the
+   `befi-*` Tailwind colors (bg-befi-brand, text-befi-ink, …).
+   Default palette = Petrol. Switch the whole /v2 site by setting
+   data-theme="navy" | "forest" on <html> (no UI switcher shipped).
+   ============================================================ */
+:root {
+  --befi-bg: #f8faf9;
+  --befi-white: #ffffff;
+  --befi-ink: #16201f;
+  --befi-surface: #eef2f1;
+  --befi-surface-30: #f4f7f6;
+  --befi-muted-fg: #5b6a67;
+  --befi-border: #dde5e2;
+  --befi-danger: #e0564f;
+  --befi-brand: #0e4a4e;
+  --befi-brand-strong: #0a393c;
+  --befi-brand-tint: #e5f0ed;
+  --befi-on-brand: #ffffff;
+  --befi-accent: #1aa45e;
+  --befi-footer-bg: #0e4a4e;
+}
+
+:root[data-theme="petrol"] {
+  --befi-bg: #f8faf9; --befi-white: #ffffff; --befi-ink: #16201f;
+  --befi-surface: #eef2f1; --befi-surface-30: #f4f7f6; --befi-muted-fg: #5b6a67;
+  --befi-border: #dde5e2;
+  --befi-brand: #0e4a4e; --befi-brand-strong: #0a393c; --befi-brand-tint: #e5f0ed;
+  --befi-on-brand: #ffffff; --befi-accent: #1aa45e; --befi-footer-bg: #0e4a4e;
+}
+
+:root[data-theme="navy"] {
+  --befi-bg: #f9fbfd; --befi-white: #ffffff; --befi-ink: #15202e;
+  --befi-surface: #eef2f7; --befi-surface-30: #f5f8fb; --befi-muted-fg: #5a6678;
+  --befi-border: #dde4ee;
+  --befi-brand: #133a63; --befi-brand-strong: #0e2c4c; --befi-brand-tint: #e7eef6;
+  --befi-on-brand: #ffffff; --befi-accent: #1aa45e; --befi-footer-bg: #102a43;
+}
+
+:root[data-theme="forest"] {
+  --befi-bg: #f9faf6; --befi-white: #ffffff; --befi-ink: #18211b;
+  --befi-surface: #eef2ea; --befi-surface-30: #f4f7f1; --befi-muted-fg: #5c6a5b;
+  --befi-border: #dfe5d9;
+  --befi-brand: #1c5237; --befi-brand-strong: #15402b; --befi-brand-tint: #e8f1ea;
+  --befi-on-brand: #ffffff; --befi-accent: #b08a3e; --befi-footer-bg: #16321f;
 }

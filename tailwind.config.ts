@@ -58,6 +58,23 @@ export default {
           DEFAULT: "hsl(var(--card))",
           foreground: "hsl(var(--card-foreground))",
         },
+        // BeFi v2 — petrol design system (additive; scoped to /v2 via these tokens).
+        // Resolved hex aliases live in index.css as --befi-* and switch with [data-theme].
+        befi: {
+          bg: "var(--befi-bg)",
+          white: "var(--befi-white)",
+          ink: "var(--befi-ink)",
+          surface: "var(--befi-surface)",
+          "surface-30": "var(--befi-surface-30)",
+          muted: "var(--befi-muted-fg)",
+          border: "var(--befi-border)",
+          brand: "var(--befi-brand)",
+          "brand-strong": "var(--befi-brand-strong)",
+          "brand-tint": "var(--befi-brand-tint)",
+          "on-brand": "var(--befi-on-brand)",
+          accent: "var(--befi-accent)",
+          "footer-bg": "var(--befi-footer-bg)",
+        },
       },
       borderRadius: {
         lg: "var(--radius)",
@@ -65,6 +82,16 @@ export default {
         sm: "calc(var(--radius) - 4px)",
         "2xl": "1.25rem",
         "3xl": "1.5rem",
+        "4xl": "2rem",
+      },
+      boxShadow: {
+        "befi-md": "0 4px 12px hsla(0, 0%, 10%, 0.08)",
+        "befi-lg": "0 12px 32px hsla(0, 0%, 10%, 0.10)",
+        "befi-xl": "0 20px 40px hsla(0, 0%, 10%, 0.10)",
+        "befi-2xl": "0 24px 60px hsla(0, 0%, 10%, 0.14)",
+      },
+      transitionTimingFunction: {
+        befi: "cubic-bezier(0.25, 0.46, 0.45, 0.94)",
       },
       keyframes: {
         "accordion-down": {

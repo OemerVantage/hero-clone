@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1600 1000" preserveAspectRatio="xMidYMid slice" role="img" aria-label="Bild folgt">
+  <rect width="1600" height="1000" fill="#e5f0ed"/>
+  <g fill="none" stroke="#0e4a4e" stroke-opacity="0.35" stroke-width="6" stroke-linecap="round" stroke-linejoin="round">
+    <rect x="636" y="358" width="328" height="246" rx="22"/>
+    <circle cx="724" cy="432" r="28"/>
+    <path d="M652 566 744 486 804 540 884 468 948 566"/>
+  </g>
+  <text x="800" y="688" text-anchor="middle" font-family="Geist, Inter, system-ui, sans-serif" font-size="46" font-weight="500" letter-spacing="1" fill="#5b6a67">Bild folgt</text>
+</svg>
